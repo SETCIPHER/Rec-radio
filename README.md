@@ -1,6 +1,6 @@
-# Rec-radio
-
- > #### A simple application serves as a solution for recording an output audio stream, eliminates the additional use of the recording station. The main priority of the idea is a fault-tolerant hourly recording of the stream from radio stations, it is also possible to convert the main audio formats.
+# <img src="https://user-images.githubusercontent.com/98338448/151111608-2c703e32-110e-457f-9984-f61f25f7875d.gif" width="64" align="center"><figcaption> Rec-radio</figcaption>
+  
+ > A simple application serves as a solution for recording an output audio stream, eliminates the additional use of the recording station. The main priority of the idea is a fault-tolerant hourly recording of the stream from radio stations, it is also possible to convert the main audio formats.
 
 **Capture and conversion settings**
 
