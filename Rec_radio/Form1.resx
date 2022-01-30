@@ -6972,15 +6972,15 @@
         AADAAwAA4AcAAPAPAAD+fwAA
 </value>
   </data>
-  <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="imageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>319, 17</value>
   </metadata>
-  <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="imageList.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAm
-        AwAAAk1TRnQBSQFMAwEBAAEIAQYBCAEGARgBAAEYAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABYAMA
+        AwAAAk1TRnQBSQFMAwEBAAEoAQYBKAEGARgBAAEYAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABYAMA
         ARgDAAEBAQABIAYAAST/AP8A/wD/AKoAAyIBMgNQAaMDXAHOA1wB3ANZAc8DUgGoAxEBF/8AYQADWQG+
         AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wNLAY//AFkAAzoBYgMAAf8DAAH/AwAB/wMAAf8DAAH/
         AwAB/wMAAf8DAAH/AwAB/wMkATX/AFUAA0ABcAMAAf8DAAH/AwAB/wMAAf8DAAH/AwAB/wMAAf8DAAH/
@@ -6996,10 +6996,10 @@
         AeABHwkAAf8B4AEfCQAD/wkAA/8JAAP/CQAD/wkACw==
 </value>
   </data>
-  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>429, 17</value>
   </metadata>
-  <data name="DelMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="delMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyAAAAMgCAYAAADbcAZoAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
         EAAAFxABGGER2wAAkn9JREFUeF7s3QdUVNe+gPEM9l4oKkivQ52BoXd7N9WYxDTTbrpJjBpjEmOK6b33
@@ -7630,7 +7630,7 @@
         AAAAAAAAAAAAAAAAAABe1AB3T+Jd+rpZOwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Stop.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonStopRec.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAANlJREFUeF7t
         2DEKxFAUQtGs4K85O88gtjZhDFjcA7b66ncBAAAAAAAA+Mdzzvks6vfMrue+78+ifs/sioe3on7P7IqH
@@ -7639,7 +7639,7 @@
         on7P7IqHt6J+z+yK39xW1O8ZAAAAAAAAAADeu64fI1YZGRqq4EgAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pictureBox_front.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxFront.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk1ORwAAAAAAADYAAAAoAAAARQEAAA4AAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8A/wD/
         Av8A/gP/AP4F/wD+B/8A/Qj/AP0K/wD9DP8A/A3/APwP/wD8Ef8A+xL/APsU/wD7Fv8A+hf/APoZ/wD6
@@ -7948,7 +7948,7 @@
         //8AAv//AAH//wAA//8=
 </value>
   </data>
-  <data name="pictureBox_back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk12UQAAAAAAADYAAAAoAAAARQEAABAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICA/4CA
         gP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CA
@@ -8300,7 +8300,7 @@
         gP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/w==
 </value>
   </data>
-  <data name="button7.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonRemote.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyAAAAMgCAYAAADbcAZoAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
         DwAAFw8BJ7uvCwAAl9pJREFUeF7s3QWYHOXh+PHOuuvszO6eu7vlPBcPCSQkxIm7O+7uWrRYcA8QJJDS
@@ -9233,7 +9233,7 @@
   <metadata name="timer2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>584, 17</value>
   </metadata>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>16, 17</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

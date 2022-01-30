@@ -63,16 +63,6 @@ namespace Rec_radio.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cipher_Git_Baner {
-            get {
-                object obj = ResourceManager.GetObject("Cipher-Git_Baner", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap folder_dir {
             get {
                 object obj = ResourceManager.GetObject("folder_dir", resourceCulture);

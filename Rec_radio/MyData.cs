@@ -1,51 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Rec_radio
 {
     class MyData
     {
-        public bool Yes_no = false; // checked 
-        private string Year = DateTime.Now.ToString("yyyy");
-        private string Month = DateTime.Now.ToString("MM");
-        private string Day = DateTime.Now.ToString("dd");
-        public string Filename;
-        private string Name;
+        public bool yes_no = false; // checked 
+        private string year = DateTime.Now.ToString("yyyy");
+        private string month = DateTime.Now.ToString("MM");
+        private string day = DateTime.Now.ToString("dd");
+        public string fileName;
+        private string dirName;
 
-        public string GetInfo()
+        public string get_Info()
         {
-            return "\\" + Year + "\\" + Month + "\\" + Day + "\\";
+            return "\\" + year + "\\" + month + "\\" + day + "\\";
         }
 
-        public string GetDirName(string name)
+        public string getDirName(string name)
         {
 
-            if (Yes_no == true)
+            if (yes_no == true)
             {
-                Name = name + GetInfo();
+                dirName = name + get_Info();
             }
             else
             {
-                Name = name;
+                dirName = name;
             }
 
-            DirectoryInfo dirInfo = new DirectoryInfo(Name);
+            DirectoryInfo dirInfo = new DirectoryInfo(dirName);
             if (!dirInfo.Exists)
             {
                 dirInfo.Create();
             }
-            return Name;
+            return dirName;
         }
 
-        public string GetName()
+        public string getName()
         {
-            Filename = DateTime.Now.ToString("HH-mm-ss") + ".mp3";
+            fileName = DateTime.Now.ToString("HH-mm-ss") + ".mp3";
             //Filename = filename;
-            return Name + "\\" + Filename;
+            return dirName + "\\" + fileName;
         }
 
         ~MyData()
