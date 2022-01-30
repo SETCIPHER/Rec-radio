@@ -13,17 +13,17 @@ namespace Rec_radio
         public string fileName;
         private string dirName;
 
-        public string get_Info()
+        public string GetInfo()
         {
             return "\\" + year + "\\" + month + "\\" + day + "\\";
         }
 
-        public string getDirName(string name)
+        public string GetDirName(string name)
         {
 
             if (yes_no == true)
             {
-                dirName = name + get_Info();
+                dirName = name + GetInfo();
             }
             else
             {
@@ -38,7 +38,7 @@ namespace Rec_radio
             return dirName;
         }
 
-        public string getName()
+        public string GetName()
         {
             fileName = DateTime.Now.ToString("HH-mm-ss") + ".mp3";
             //Filename = filename;

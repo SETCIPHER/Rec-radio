@@ -111,14 +111,14 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // Tree
             // 
             this.Tree.Icon = ((System.Drawing.Icon)(resources.GetObject("Tree.Icon")));
             this.Tree.Text = "Rec sound";
             this.Tree.Visible = true;
-            this.Tree.Click += new System.EventHandler(this.notifyIconTree_Click);
+            this.Tree.Click += new System.EventHandler(this.NotifyIconTree_Click);
             // 
             // imageList
             // 
@@ -197,7 +197,7 @@
             this.trackBarAudio.TabIndex = 26;
             this.trackBarAudio.Text = "metroTrackBar1";
             this.trackBarAudio.Value = 0;
-            this.trackBarAudio.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroTrackBar_Scroll);
+            this.trackBarAudio.Scroll += new System.Windows.Forms.ScrollEventHandler(this.MetroTrackBar_Scroll);
             // 
             // buttonOpenDir
             // 
@@ -214,7 +214,7 @@
             this.buttonOpenDir.Size = new System.Drawing.Size(30, 30);
             this.buttonOpenDir.TabIndex = 32;
             this.buttonOpenDir.UseVisualStyleBackColor = false;
-            this.buttonOpenDir.Click += new System.EventHandler(this.button_Click_OpenDir);
+            this.buttonOpenDir.Click += new System.EventHandler(this.Button_Click_OpenDir);
             // 
             // buttonStopAudio
             // 
@@ -230,7 +230,7 @@
             this.buttonStopAudio.Size = new System.Drawing.Size(30, 30);
             this.buttonStopAudio.TabIndex = 31;
             this.buttonStopAudio.UseVisualStyleBackColor = false;
-            this.buttonStopAudio.Click += new System.EventHandler(this.stop_Menuitem_Click);
+            this.buttonStopAudio.Click += new System.EventHandler(this.Stop_Menu_Item_Click);
             // 
             // listViewInfoTrack
             // 
@@ -251,7 +251,7 @@
             this.listViewInfoTrack.TabIndex = 22;
             this.listViewInfoTrack.UseCompatibleStateImageBehavior = false;
             this.listViewInfoTrack.View = System.Windows.Forms.View.Details;
-            this.listViewInfoTrack.DoubleClick += new System.EventHandler(this.playlist_Play_Click);
+            this.listViewInfoTrack.DoubleClick += new System.EventHandler(this.Playlist_Play_Click);
             // 
             // columnHeader1
             // 
@@ -309,7 +309,7 @@
             this.buttonRefresh.Size = new System.Drawing.Size(30, 30);
             this.buttonRefresh.TabIndex = 21;
             this.buttonRefresh.UseVisualStyleBackColor = false;
-            this.buttonRefresh.Click += new System.EventHandler(this.button_Click_Refresh);
+            this.buttonRefresh.Click += new System.EventHandler(this.Button_Click_Refresh);
             // 
             // buttonPush
             // 
@@ -325,7 +325,7 @@
             this.buttonPush.Size = new System.Drawing.Size(30, 30);
             this.buttonPush.TabIndex = 20;
             this.buttonPush.UseVisualStyleBackColor = false;
-            this.buttonPush.Click += new System.EventHandler(this.play_Menu_Item_Click);
+            this.buttonPush.Click += new System.EventHandler(this.Play_Menu_Item_Click);
             // 
             // buttonPause
             // 
@@ -341,7 +341,7 @@
             this.buttonPause.Size = new System.Drawing.Size(30, 30);
             this.buttonPause.TabIndex = 30;
             this.buttonPause.UseVisualStyleBackColor = false;
-            this.buttonPause.Click += new System.EventHandler(this.pauseMenuItem_Click);
+            this.buttonPause.Click += new System.EventHandler(this.Pause_Menu_Item_Click);
             // 
             // label8
             // 
@@ -381,7 +381,7 @@
             this.radioButtonStereo.Tag = "1";
             this.radioButtonStereo.Text = "Stereo";
             this.radioButtonStereo.UseVisualStyleBackColor = true;
-            this.radioButtonStereo.CheckedChanged += new System.EventHandler(this.radioButtonStereo_CheckedChanged);
+            this.radioButtonStereo.CheckedChanged += new System.EventHandler(this.RadioButtonStereo_CheckedChanged);
             // 
             // radioButtonMono
             // 
@@ -394,7 +394,7 @@
             this.radioButtonMono.Tag = "0";
             this.radioButtonMono.Text = "Mono";
             this.radioButtonMono.UseVisualStyleBackColor = true;
-            this.radioButtonMono.CheckedChanged += new System.EventHandler(this.radioButtonMono_CheckedChanged);
+            this.radioButtonMono.CheckedChanged += new System.EventHandler(this.RadioButtonMono_CheckedChanged);
             // 
             // label2
             // 
@@ -450,7 +450,7 @@
             this.folderDir.Size = new System.Drawing.Size(30, 30);
             this.folderDir.TabIndex = 25;
             this.folderDir.UseVisualStyleBackColor = false;
-            this.folderDir.Click += new System.EventHandler(this.button_Click_OpenDir);
+            this.folderDir.Click += new System.EventHandler(this.Button_Click_OpenDir);
             // 
             // chart_Animation
             // 
@@ -502,7 +502,7 @@
             this.buttonStartRec.TabIndex = 19;
             this.buttonStartRec.Text = "REC";
             this.buttonStartRec.UseVisualStyleBackColor = false;
-            this.buttonStartRec.Click += new System.EventHandler(this.button_Click_StartRec);
+            this.buttonStartRec.Click += new System.EventHandler(this.Button_Click_StartRec);
             // 
             // label9
             // 
@@ -527,7 +527,7 @@
             this.buttonStopRec.Size = new System.Drawing.Size(38, 23);
             this.buttonStopRec.TabIndex = 12;
             this.buttonStopRec.UseVisualStyleBackColor = false;
-            this.buttonStopRec.Click += new System.EventHandler(this.stop_Click);
+            this.buttonStopRec.Click += new System.EventHandler(this.Stop_Click);
             // 
             // label4
             // 
@@ -550,7 +550,7 @@
             this.comboBoxCheck.Name = "comboBoxCheck";
             this.comboBoxCheck.Size = new System.Drawing.Size(325, 21);
             this.comboBoxCheck.TabIndex = 13;
-            this.comboBoxCheck.SelectedIndexChanged += new System.EventHandler(this.comboBoxCheck_SelectedIndexChanged);
+            this.comboBoxCheck.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCheck_SelectedIndexChanged);
             // 
             // pictureBoxFront
             // 
@@ -685,7 +685,7 @@
             this.radioButtonWma.Tag = "1";
             this.radioButtonWma.Text = "WMA";
             this.radioButtonWma.UseVisualStyleBackColor = true;
-            this.radioButtonWma.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged_Wma_Aac);
+            this.radioButtonWma.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged_Wma_Aac);
             // 
             // buttonOpen
             // 
@@ -702,7 +702,7 @@
             this.buttonOpen.TabIndex = 26;
             this.buttonOpen.Text = "...";
             this.buttonOpen.UseVisualStyleBackColor = false;
-            this.buttonOpen.Click += new System.EventHandler(this.button_Click_Open_Dir);
+            this.buttonOpen.Click += new System.EventHandler(this.Button_Click_Open_Dir);
             // 
             // buttonRemote
             // 
@@ -721,7 +721,7 @@
             this.buttonRemote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonRemote.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.buttonRemote.UseVisualStyleBackColor = false;
-            this.buttonRemote.Click += new System.EventHandler(this.button_Click_Remonte);
+            this.buttonRemote.Click += new System.EventHandler(this.Button_Click_Remonte);
             // 
             // radioButtonAac
             // 
@@ -734,7 +734,7 @@
             this.radioButtonAac.Tag = "1";
             this.radioButtonAac.Text = "AAC";
             this.radioButtonAac.UseVisualStyleBackColor = true;
-            this.radioButtonAac.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged_Wma_Aac);
+            this.radioButtonAac.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged_Wma_Aac);
             // 
             // comboBoxLame
             // 
@@ -794,7 +794,7 @@
             this.radioButtonWav.Tag = "1";
             this.radioButtonWav.Text = "WAV";
             this.radioButtonWav.UseVisualStyleBackColor = true;
-            this.radioButtonWav.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged_Wav);
+            this.radioButtonWav.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged_Wav);
             // 
             // label14
             // 
@@ -816,7 +816,7 @@
             this.radioButtonMp3.Tag = "1";
             this.radioButtonMp3.Text = "MP3";
             this.radioButtonMp3.UseVisualStyleBackColor = true;
-            this.radioButtonMp3.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged_Mp3);
+            this.radioButtonMp3.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged_Mp3);
             // 
             // groupBox2
             // 
@@ -848,7 +848,7 @@
             this.checkDataDir.TabIndex = 22;
             this.checkDataDir.Text = "Create data dir - YES/NO";
             this.checkDataDir.UseVisualStyleBackColor = true;
-            this.checkDataDir.CheckedChanged += new System.EventHandler(this.checkDataDir_CheckedChanged);
+            this.checkDataDir.CheckedChanged += new System.EventHandler(this.Check_DataDir_CheckedChanged);
             // 
             // buttonSaveSettings
             // 
@@ -865,11 +865,11 @@
             this.buttonSaveSettings.Size = new System.Drawing.Size(30, 30);
             this.buttonSaveSettings.TabIndex = 1;
             this.buttonSaveSettings.UseVisualStyleBackColor = false;
-            this.buttonSaveSettings.Click += new System.EventHandler(this.buttonSaveSettings_Click);
+            this.buttonSaveSettings.Click += new System.EventHandler(this.ButtonSaveSettings_Click);
             // 
             // timer2
             // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.timer2.Tick += new System.EventHandler(this.Timer_Data_Tick);
             // 
             // openFileDialog
             // 

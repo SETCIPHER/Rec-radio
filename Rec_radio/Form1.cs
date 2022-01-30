@@ -23,12 +23,12 @@ namespace Rec_radio
         public Form1()
         {
             InitializeComponent();
-            sound_Frequency();
-            save_Init();
-            my_Queue();
+            Sound_Frequency();
+            Save_Init();
+            Queue();
+
             buttonStartRec.Enabled = false;
             buttonStopRec.Enabled = false;
-
             labelState.Visible = false;
             comboBoxCheck.Enabled = false;
             trackBarAudio.Enabled = false;
@@ -37,7 +37,7 @@ namespace Rec_radio
             comboBoxLame.Enabled = false;
 
             // устанавливаем обработчики событий для меню
-            delMenuItem.Click += del_Menu_Item_Click;  
+            delMenuItem.Click += Del_Menu_Item_Click;  
 
         }
         
@@ -62,7 +62,7 @@ namespace Rec_radio
         bool flag = false;
 
 
-        private void my_Queue()
+        private void Queue()
         {
             int n = 4000;
             myQueue = new Queue<double>(Enumerable.Repeat(0.0, n).ToList()); // fill myQ w/ zeros
@@ -83,40 +83,14 @@ namespace Rec_radio
             //chart1.ChartAreas[0].AxisX.LineColor = Color.Black;
             //chart1.ChartAreas[0].AxisY.LineColor = Color.Black;
         }
-        private void waveIn_DataAvailable(object sender, WaveInEventArgs e)
+        private void WaveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
             if (stream_out != null)
                 stream_out.Write(e.Buffer, 0, e.BytesRecorded);
             //stream_out.Flush();
 
         }
-        private void waveIn_char(object sender, WaveInEventArgs e)
-        {
-            for (int i = 0; i < e.BytesRecorded; i += 2)
-            {
-                myQueue.Enqueue(BitConverter.ToInt16(e.Buffer, i));
-                myQueue.Dequeue();
-            }
-        }
-        private void timer1_Tick(object sender, EventArgs e) // отображение часов
-        {
-            try
-            {
-                label4.Text = DateTime.Now.ToString();
-                double frac = audioValueLast / audioValueMax;
-                pictureBoxFront.Width = (int)(frac * pictureBoxBack.Width - 1);
-                labelState.Text = string.Format("{0:00.00}%", frac * 100.0, audioCount); // [count: {0}]
-            
-                chart_Animation.Series["Series1"].Points.DataBindY(myQueue);
-                
-            }
-            catch
-            {
-                Console.WriteLine("No bytes recorded");
-            }
-
-        }
-        private void waveIn_Data_Available(object sender, WaveInEventArgs args)
+        private void WaveIn_DataAvailable_Float(object sender, WaveInEventArgs args)
         {
 
             float max = 0;
@@ -138,9 +112,36 @@ namespace Rec_radio
             audioValueLast = max;
             audioCount += 1;
         }
+        private void WaveIn_Char(object sender, WaveInEventArgs e)
+        {
+            for (int i = 0; i < e.BytesRecorded; i += 2)
+            {
+                myQueue.Enqueue(BitConverter.ToInt16(e.Buffer, i));
+                myQueue.Dequeue();
+            }
+        }
+        private void Timer_Tick(object sender, EventArgs e) // отображение часов
+        {
+            try
+            {
+                label4.Text = DateTime.Now.ToString();
+                double frac = audioValueLast / audioValueMax;
+                pictureBoxFront.Width = (int)(frac * pictureBoxBack.Width - 1);
+                labelState.Text = string.Format("{0:00.00}%", frac * 100.0, audioCount); // [count: {0}]
+            
+                chart_Animation.Series["Series1"].Points.DataBindY(myQueue);
+                
+            }
+            catch
+            {
+                Console.WriteLine("No bytes recorded");
+            }
+
+        }
+       
         //======================================================================
         // ТАЙМЕР ДЛЯ ЗАПИСИ С ИНТЕРВАЛОМ В ЧАС
-        private void оn_Timed_Event(object sender, ElapsedEventArgs e)
+        private void Timed_Event(object sender, ElapsedEventArgs e)
         {
             int time = DateTime.Now.Hour;//текущие минуты
 
@@ -152,19 +153,19 @@ namespace Rec_radio
                     case "WASAIP":
                         if (waveIn_out != null)//если запись идет то остановит
                         {
-                            stop_Recording();//Запись оставновленна
+                            Stop_Recording();//Запись оставновленна
                             Thread.Sleep(200);
                             listBoxInfo.Items.Add("AUTOSTART! - " + DateTime.Now);
-                            start_Records();
+                            Start_Records();
 
                         }; break;
                     case "LINE_IN":
                         if (waveIn != null)//если запись идет то остановит
                         {
-                            stop_Recording();//Запись оставновленна
+                            Stop_Recording();//Запись оставновленна
                             Thread.Sleep(200);
                             listBoxInfo.Items.Add("AUTOSTART! - " + DateTime.Now);
-                            start_Records();
+                            Start_Records();
 
                         }; break;
 
@@ -176,17 +177,17 @@ namespace Rec_radio
 
             }
         }
-        private void init_Timer()
+        private void Init_Timer()
         {
             Timer = new System.Timers.Timer(1000);
-            Timer.Elapsed += оn_Timed_Event;
+            Timer.Elapsed += Timed_Event;
             Timer.AutoReset = true;
             Timer.Enabled = true;
         }
         //========================================================================
         // ВХОДНОЙ СИГНАЛ
 
-        public void team_Start()
+        public void Team_Start()
         {
             buttonStartRec.BackColor = Color.FromArgb(0, 255, 200, 200); //Идет запись цвет кнопки при нажатие 
             buttonStartRec.Enabled = false;
@@ -202,18 +203,18 @@ namespace Rec_radio
             radioButtonStereo.Enabled = false;
             buttonSaveSettings.Enabled = false;
         }
-        private void start_Records() // Начинаем запись - обработчик нажатия кнопки
+        private void Start_Records() // Начинаем запись - обработчик нажатия кнопки
         {
-            init_Timer();
-            team_Start();
+            Init_Timer();
+            Team_Start();
             try
             {
-                data.getDirName(directoryName.Text);
-                string outputFilename = null;
+                data.GetDirName(directoryName.Text);
+                string outputFileName = null;
  
                 flag = true;
                 
-                outputFilename = data.getName();
+                outputFileName = data.GetName();
                 //outputFilename = data.Filename = "Rario.mp3";
 
                 int sampleRate = Convert.ToInt32(comboBoxKhz.Text); // 8 kHz /Freqency Hz 8000, 11025, 16000, 22050, 24000, 32000, 44100, 48000
@@ -225,38 +226,38 @@ namespace Rec_radio
                     case "WASAIP":
                         waveIn_out = new WasapiLoopbackCapture();
                         //waveOut.DeviceNumber = selectedDevice; //Дефолтное устройство для записи (если оно имеется)
-                        waveIn_out.DataAvailable += waveIn_Data_Available;
-                        waveIn_out.DataAvailable += waveIn_char;
-                        waveIn_out.DataAvailable += new EventHandler<WaveInEventArgs>(waveIn_DataAvailable); //Прикрепляем к событию DataAvailable обработчик, возникающий при наличии записываемых данных
-                        waveIn_out.RecordingStopped += new EventHandler<StoppedEventArgs>(waveIn_RecordingStopped); // Прикрепляем обработчик завершения записи 
-                        stream_out = new LameMP3FileWriter(outputFilename, WaveFormat.CreateIeeeFloatWaveFormat(sampleRate, channels), lamePreset);
+                        waveIn_out.DataAvailable += WaveIn_DataAvailable_Float;
+                        waveIn_out.DataAvailable += WaveIn_Char;
+                        waveIn_out.DataAvailable += new EventHandler<WaveInEventArgs>(WaveIn_DataAvailable); //Прикрепляем к событию DataAvailable обработчик, возникающий при наличии записываемых данных
+                        waveIn_out.RecordingStopped += new EventHandler<StoppedEventArgs>(WaveIn_RecordingStopped); // Прикрепляем обработчик завершения записи 
+                        stream_out = new LameMP3FileWriter(outputFileName, WaveFormat.CreateIeeeFloatWaveFormat(sampleRate, channels), lamePreset);
                         waveIn_out.StartRecording(); // Начало записи; 
-                        label9.Text = waveIn_out.WaveFormat.BitsPerSample + " bit PCM: " + sampleRate / 1000 + " kHz " + channels + " channels " + "_ " + outputFilename;
+                        label9.Text = waveIn_out.WaveFormat.BitsPerSample + " bit PCM: " + sampleRate / 1000 + " kHz " + channels + " channels " + "_ " + outputFileName;
                         break;
                     case "LINE_IN":
                         waveIn = new WaveInEvent();
                         waveIn.DeviceNumber = selectedDevice; //Дефолтное устройство для записи (если оно имеется)
-                        waveIn.DataAvailable += waveIn_Data_Available;
-                        waveIn.DataAvailable += waveIn_char;
-                        waveIn.DataAvailable += new EventHandler<WaveInEventArgs>(waveIn_DataAvailable);  //Прикрепляем к событию DataAvailable обработчик, возникающий при наличии записываемых данных
-                        waveIn.RecordingStopped += new EventHandler<StoppedEventArgs>(waveIn_RecordingStopped);  // Прикрепляем обработчик завершения записи 
+                        waveIn.DataAvailable += WaveIn_DataAvailable_Float;
+                        waveIn.DataAvailable += WaveIn_Char;
+                        waveIn.DataAvailable += new EventHandler<WaveInEventArgs>(WaveIn_DataAvailable);  //Прикрепляем к событию DataAvailable обработчик, возникающий при наличии записываемых данных
+                        waveIn.RecordingStopped += new EventHandler<StoppedEventArgs>(WaveIn_RecordingStopped);  // Прикрепляем обработчик завершения записи 
                         waveIn.WaveFormat = new WaveFormat(sampleRate, channels); // Формат wav-файла - принимает параметры - частоту дискретизации и количество каналов(здесь mono)
                         //writer = new WaveFileWriter(outputFilename, waveIn.WaveFormat);
-                        stream_out = new LameMP3FileWriter(outputFilename, waveIn.WaveFormat, lamePreset); 
+                        stream_out = new LameMP3FileWriter(outputFileName, waveIn.WaveFormat, lamePreset); 
                         waveIn.StartRecording();
-                        label9.Text = waveIn.WaveFormat.ToString() + "_ " + outputFilename;
+                        label9.Text = waveIn.WaveFormat.ToString() + "_ " + outputFileName;
                         ; break;
 
                 }
                 listBoxInfo.ForeColor = Color.Black;
-                listBoxInfo.Items.Add("NEW " + outputFilename);
+                listBoxInfo.Items.Add("NEW " + outputFileName);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        void stop_Recording() // Завершаем запись
+        void Stop_Recording() // Завершаем запись
         {
             switch (comboBoxCapture.Text)
             {
@@ -274,7 +275,7 @@ namespace Rec_radio
 
 
         }
-        private void waveIn_RecordingStopped(object sender, EventArgs e)  // Окончание записи
+        private void WaveIn_RecordingStopped(object sender, EventArgs e)  // Окончание записи
         {
 
             switch (comboBoxCapture.Text)
@@ -314,13 +315,13 @@ namespace Rec_radio
         }
         //=====================================================================
         // REC Обработчик нажатия кнопки записи
-        private void button_Click_StartRec(object sender, EventArgs e)
+        private void Button_Click_StartRec(object sender, EventArgs e)
         {
-            start_Records();
+            Start_Records();
             buttonStopRec.Enabled = true;
-            folder_Dir();
+            Folder_Dir();
         }
-        public void team_Stop()
+        public void Team_Stop()
         {
             label3.Visible = false;
             label3.Visible = false;
@@ -338,7 +339,7 @@ namespace Rec_radio
             radioButtonStereo.Enabled = true;
             buttonStopRec.Enabled = false;
         }
-        private void stop_Click(object sender, EventArgs e)
+        private void Stop_Click(object sender, EventArgs e)
         {
 
             switch (comboBoxCapture.Text)
@@ -346,19 +347,19 @@ namespace Rec_radio
                 case "WASAIP":
                     if (waveIn_out != null)
                     {
-                        stop_Recording();
+                        Stop_Recording();
                     }
                      ; break;
                 case "LINE_IN":
                     if (waveIn != null)
                     {
-                        stop_Recording();
+                        Stop_Recording();
                     }
                     ; break;
 
             }
 
-            team_Stop();
+            Team_Stop();
 
         }
         //=================================================================
@@ -371,7 +372,7 @@ namespace Rec_radio
                 Tree.Visible = true;
             }
         }
-        private void notifyIconTree_Click(object sender, EventArgs e)
+        private void NotifyIconTree_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
             {
@@ -380,11 +381,11 @@ namespace Rec_radio
                 Tree.Visible = false;
             }
         }
-        private void buttonSaveSettings_Click(object sender, EventArgs e)
+        private void ButtonSaveSettings_Click(object sender, EventArgs e)
         {
             try
             {
-                data.getDirName(directoryName.Text);
+                data.GetDirName(directoryName.Text);
                 Properties.Settings.Default.checkedRB = checkedRB; //присваиваем значение параметра
                 Properties.Settings.Default.Save(); // и сохраняем настройки
 
@@ -408,8 +409,8 @@ namespace Rec_radio
 
                 switch (comboBoxCapture.Text)
                 {
-                    case "WASAIP": device_OUT(); break;
-                    case "LINE_IN": device_IN(); break;
+                    case "WASAIP": Device_Out(); break;
+                    case "LINE_IN": Device_In(); break;
 
                 }
 
@@ -432,7 +433,7 @@ namespace Rec_radio
             }
 
         }
-        private void save_Init()
+        private void Save_Init()
         {
             try
             {
@@ -452,7 +453,7 @@ namespace Rec_radio
             { }
 
         }
-        void sound_Frequency()
+        void Sound_Frequency()
         {
             int[] s = { 8000, 11025, 16000, 22050, 24000, 32000, 44100, 48000/*, 96000, 192000 */};
             int[] a = { 8, 16, 24, 32, 40, 48, 56, 64, /*80, 88, 94, 96, 100, 112, 118, 124,*/ 128, /*130, 136, 142, 144, 148, 154, 160, 192, 224, 256,*/ 320 };
@@ -477,7 +478,7 @@ namespace Rec_radio
             comboBoxCapture.Items.AddRange(w);
 
         }
-        void device_IN()
+        void Device_In()
         {
             int waveInDevices = WaveIn.DeviceCount;
             for (int waveInDevice = 0; waveInDevice < waveInDevices; waveInDevice++)
@@ -488,13 +489,13 @@ namespace Rec_radio
             }
 
         }
-        void device_OUT()
+        void Device_Out()
         {
 
             comboBoxCheck.Items.Add("Device OUT WASAIP (Default playback device)");
            
         }
-        private void comboBoxCheck_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxCheck_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             selectedDevice = comboBoxCheck.SelectedIndex;
@@ -515,7 +516,7 @@ namespace Rec_radio
             (new RadioButton[] { radioButtonMono, radioButtonStereo })[checkedRB].Checked = true; // чекаем нужный rb
 
         }
-        private void radioButtonMono_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonMono_CheckedChanged(object sender, EventArgs e)
         {
             //if ((sender as RadioButton).Checked)
             //{
@@ -526,7 +527,7 @@ namespace Rec_radio
                 checkedRB = Convert.ToInt32(radioButtonMono.Tag);
             }
         }
-        private void radioButtonStereo_CheckedChanged(object sender, EventArgs e)
+        private void RadioButtonStereo_CheckedChanged(object sender, EventArgs e)
         {
             //if ((sender as RadioButton).Checked)
             //{
@@ -537,12 +538,12 @@ namespace Rec_radio
                 checkedRB = Convert.ToInt32(radioButtonStereo.Tag);
             }
         }
-        private void button_Click_OpenDir(object sender, EventArgs e)
+        private void Button_Click_OpenDir(object sender, EventArgs e)
         {
             try
             {
-                folder_Dir();
-                Process.Start(data.getDirName(directoryName.Text));
+                Folder_Dir();
+                Process.Start(data.GetDirName(directoryName.Text));
 
             }
             catch (Exception)
@@ -554,7 +555,7 @@ namespace Rec_radio
 
 
         }
-        void folder_Dir()
+        void Folder_Dir()
         {
             listViewInfoTrack.BeginUpdate();
             listViewInfoTrack.Items.Clear();
@@ -562,8 +563,8 @@ namespace Rec_radio
             {
 
                 //path = data.GetDirName(DirectoryName.Text);
-                string[] files = Directory.GetFiles(data.getDirName(directoryName.Text));
-                DirectoryInfo dir = new DirectoryInfo(data.getDirName(directoryName.Text));
+                string[] files = Directory.GetFiles(data.GetDirName(directoryName.Text));
+                DirectoryInfo dir = new DirectoryInfo(data.GetDirName(directoryName.Text));
                 foreach (FileInfo file in dir.GetFiles())
                 {
 
@@ -584,14 +585,14 @@ namespace Rec_radio
             listViewInfoTrack.EndUpdate();
 
         }
-        private void file_Play()
+        private void File_Play()
         {
             //path = data.GetDirName(DirectoryName.Text);
 
             foreach (ListViewItem item in listViewInfoTrack.SelectedItems)
             {
 
-                var playlist = Directory.GetFiles(data.getDirName(directoryName.Text), item.Text);
+                var playlist = Directory.GetFiles(data.GetDirName(directoryName.Text), item.Text);
 
                 foreach (string i in playlist)
                 {
@@ -628,18 +629,18 @@ namespace Rec_radio
 
 
                 WaveFormRenderer renderer = new WaveFormRenderer();
-                Image image = renderer.Render(data.getDirName(directoryName.Text) + item.Text, averagePeakProvider, myRendererSettings);
+                Image image = renderer.Render(data.GetDirName(directoryName.Text) + item.Text, averagePeakProvider, myRendererSettings);
                 audioPogressBar.BackgroundImage = image;
 
             }
         }
-        private void button_Click_Refresh(object sender, EventArgs e)
+        private void Button_Click_Refresh(object sender, EventArgs e)
         {
            
-                folder_Dir();
+                Folder_Dir();
                        
         }
-        private void del_Menu_Item_Click(object sender, EventArgs e)
+        private void Del_Menu_Item_Click(object sender, EventArgs e)
         {
             try
             {
@@ -654,7 +655,7 @@ namespace Rec_radio
                     {
                         listViewInfoTrack.Items.Remove(item);
 
-                        string[] Del = Directory.GetFiles(data.getDirName(directoryName.Text), item.Text);
+                        string[] Del = Directory.GetFiles(data.GetDirName(directoryName.Text), item.Text);
 
                         foreach (string i in Del)
                         {
@@ -677,11 +678,11 @@ namespace Rec_radio
                 listBoxInfo.Items.Add("NO! Audio file records");
             }
         }
-        private void play_Menu_Item_Click(object sender, EventArgs e)
+        private void Play_Menu_Item_Click(object sender, EventArgs e)
         {
             try
             {
-                file_Play();
+                File_Play();
                 outputDevice.Play();
                 trackBarAudio.Enabled = true;
                 timer2.Enabled = true; // включаем timer (выключен для обработки исключений)
@@ -694,12 +695,12 @@ namespace Rec_radio
                 //MessageBox.Show("Selected Play List");
             }
         }
-        private void stop_Menuitem_Click(object sender, EventArgs e)
+        private void Stop_Menu_Item_Click(object sender, EventArgs e)
         {
-            stop_List();
+            Stop_List();
 
         }
-        public void stop_List()
+        public void Stop_List()
         {
             try
             {
@@ -723,13 +724,13 @@ namespace Rec_radio
                 //MessageBox.Show("Selected Play List");
             }
         }
-        private void playlist_Play_Click(object sender, EventArgs e)
+        private void Playlist_Play_Click(object sender, EventArgs e)
         {
-            stop_List();
+            Stop_List();
             try
             {
                
-                file_Play();
+                File_Play();
                 outputDevice.Play();
                 trackBarAudio.Enabled = true;
                 timer2.Enabled = true; // включаем timer (выключен для обработки исключений)
@@ -744,14 +745,14 @@ namespace Rec_radio
 
         }
         // таймер для ползунка 
-        private void pauseMenuItem_Click(object sender, EventArgs e)
+        private void Pause_Menu_Item_Click(object sender, EventArgs e)
         {
             outputDevice?.Stop();
             timer2?.Stop();
         }
 
         // таймер для ползунка
-        private void metroTrackBar_Scroll(object sender, ScrollEventArgs e)
+        private void MetroTrackBar_Scroll(object sender, ScrollEventArgs e)
         {
 
             if (outputDevice != null && audioFileReader != null)
@@ -765,7 +766,7 @@ namespace Rec_radio
         }
 
         //таймер для просчета записаного файла
-        private void timer2_Tick(object sender, EventArgs e)
+        private void Timer_Data_Tick(object sender, EventArgs e)
         {
             try
             {
@@ -788,7 +789,7 @@ namespace Rec_radio
             }
             catch
             {
-                stop_List();
+                Stop_List();
 
             }
         }
@@ -797,14 +798,14 @@ namespace Rec_radio
         {
             if (waveIn_out != null)//если запись идет то остановит
             {
-                stop_Recording();//Запись оставновленна
+                Stop_Recording();//Запись оставновленна
                 
             }
         }
         //=======================================================
         //================КОНВЕРТАЦИЯ АУДИО=====================
         //=======================================================
-        public void convert_Audio()
+        public void Convert_Audio()
         {
             
             foreach (String file in openFileDialog.FileNames)
@@ -917,14 +918,14 @@ namespace Rec_radio
          
         }
         // Открыть файловый менеджер для выбора аудио файла с расширением
-        private void button_Click_Remonte(object sender, EventArgs e)
+        private void Button_Click_Remonte(object sender, EventArgs e)
         {
            
             openFileDialog.Filter = "Sound Files(*.mp3 *.aac *.wav *.mpeg *.mp4 *.ogg *.wma)|*.mp3;*.aac;*.wav;*.mpeg;*.mp4;*.ogg;*.wma | All files(*.*) | *.*";
             openFileDialog.Multiselect = true;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                convert_Audio();
+                Convert_Audio();
                 
             }
 
@@ -932,26 +933,26 @@ namespace Rec_radio
             
         }
         // Выбор расширения для конвертации
-        private void radioButton_CheckedChanged_Mp3(object sender, EventArgs e)
+        private void RadioButton_CheckedChanged_Mp3(object sender, EventArgs e)
         {
             comboBoxSampleRate.Enabled = false;
             comboBoxLame.Enabled = true;
         }
 
-        private void radioButton_CheckedChanged_Wav(object sender, EventArgs e)
+        private void RadioButton_CheckedChanged_Wav(object sender, EventArgs e)
         {
             comboBoxLame.Enabled = true;
             comboBoxSampleRate.Enabled = true;
         }
 
-        private void radioButton_CheckedChanged_Wma_Aac(object sender, EventArgs e)
+        private void RadioButton_CheckedChanged_Wma_Aac(object sender, EventArgs e)
         {
             comboBoxSampleRate.Enabled = false;
             comboBoxLame.Enabled = false;
         }
        
         //Открыть папку с конвертируемыми аудио файлами
-        private void button_Click_Open_Dir(object sender, EventArgs e)
+        private void Button_Click_Open_Dir(object sender, EventArgs e)
         {
             try
             {
@@ -965,7 +966,7 @@ namespace Rec_radio
             
         }
 
-        private void checkDataDir_CheckedChanged(object sender, EventArgs e)
+        private void Check_DataDir_CheckedChanged(object sender, EventArgs e)
         {
             if(checkDataDir.Checked == true)
             {
