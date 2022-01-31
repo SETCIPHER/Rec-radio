@@ -22,23 +22,7 @@ namespace Rec_radio
         
         public Form1()
         {
-            InitializeComponent();
-            SoundFrequency();
-            SaveInit();
-            Queue();
-
-            btnStartRec.Enabled = false;
-            btnStopRec.Enabled = false;
-            lbState.Visible = false;
-            cmbxCheck.Enabled = false;
-            trbAudio.Enabled = false;
-            listViewInfoTrack.SmallImageList = imageList;
-            cmbxSampleRate.Enabled = false;
-            cmbxLame.Enabled = false;
-
-            // устанавливаем обработчики событий для меню
-            delMenuItem.Click += delMenuItem_Click;  
-
+            InitializeComponent();  
         }
         
         private System.Timers.Timer Timer;
@@ -47,9 +31,6 @@ namespace Rec_radio
         int checkedRB;
 
         MyData data = new MyData();
-       
-        
-
 
         WasapiLoopbackCapture waveInOut;
         LameMP3FileWriter streamOut;
@@ -61,7 +42,27 @@ namespace Rec_radio
 
         bool flag = false;
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            checkedRB = Properties.Settings.Default.checkedRB; //читаем
+            (new RadioButton[] { rbtnMono, rbtnStereo })[checkedRB].Checked = true; // чекаем нужный rb
 
+            SoundFrequency();
+            SaveInit();
+            Queue();
+            btnStartRec.Enabled = false;
+            btnStopRec.Enabled = false;
+            lbState.Visible = false;
+            cmbxCheck.Enabled = false;
+            trbAudio.Enabled = false;
+            listViewInfoTrack.SmallImageList = imageList;
+            cmbxSampleRate.Enabled = false;
+            cmbxLame.Enabled = false;
+
+            // устанавливаем обработчики событий для меню
+            delMenuItem.Click += delMenuItem_Click;
+
+        }
         private void Queue()
         {
             int n = 4000;
@@ -72,46 +73,37 @@ namespace Rec_radio
             chart_Animation.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
             chart_Animation.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             chart_Animation.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
-            //chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
-
             chart_Animation.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
             chart_Animation.ChartAreas[0].AxisY.LabelStyle.Enabled = false;
-
-            //chart1.ChartAreas[0].AxisX.Interval = 1;
-            //chart1.ChartAreas[0].AxisY.Interval = 1;
-
-            //chart1.ChartAreas[0].AxisX.LineColor = Color.Black;
-            //chart1.ChartAreas[0].AxisY.LineColor = Color.Black;
         }
         private void WaveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
             if (streamOut != null)
+            {
                 streamOut.Write(e.Buffer, 0, e.BytesRecorded);
-            //stream_out.Flush();
+                //stream_out.Flush();
 
-        }
-        private void WaveIn_DataAvailable_Float(object sender, WaveInEventArgs args)
-        {
+                float max = 0;
 
-            float max = 0;
+                // interpret as 16 bit audio
+                for (int index = 0; index < e.BytesRecorded; index += 2)
+                {
+                    short sample = (short)((e.Buffer[index + 1] << 8) | e.Buffer[index + 0]);
+                    var sample32 = sample / 32768f; // to floating point
+                    if (sample32 < 0) sample32 = -sample32; // absolute value 
+                    if (sample32 > max) max = sample32; // is this the max value?
+                }
 
-            // interpret as 16 bit audio
-            for (int index = 0; index < args.BytesRecorded; index += 2)
-            {
-                short sample = (short)((args.Buffer[index + 1] << 8) | args.Buffer[index + 0]);
-                var sample32 = sample / 32768f; // to floating point
-                if (sample32 < 0) sample32 = -sample32; // absolute value 
-                if (sample32 > max) max = sample32; // is this the max value?
-            }
+                // calculate what fraction this peak is of previous peaks
+                if (max > audioValueMax)
+                {
+                    audioValueMax = (double)max;
+                }
+                audioValueLast = max;
+                audioCount += 1;
+            }      
 
-            // calculate what fraction this peak is of previous peaks
-            if (max > audioValueMax)
-            {
-                audioValueMax = (double)max;
-            }
-            audioValueLast = max;
-            audioCount += 1;
-        }
+        }   
         private void WaveIn_Char(object sender, WaveInEventArgs e)
         {
             for (int i = 0; i < e.BytesRecorded; i += 2)
@@ -225,8 +217,6 @@ namespace Rec_radio
                 {
                     case "WASAIP":
                         waveInOut = new WasapiLoopbackCapture();
-                        //waveOut.DeviceNumber = selectedDevice; //Дефолтное устройство для записи (если оно имеется)
-                        waveInOut.DataAvailable += WaveIn_DataAvailable_Float;
                         waveInOut.DataAvailable += WaveIn_Char;
                         waveInOut.DataAvailable += new EventHandler<WaveInEventArgs>(WaveIn_DataAvailable); //Прикрепляем к событию DataAvailable обработчик, возникающий при наличии записываемых данных
                         waveInOut.RecordingStopped += new EventHandler<StoppedEventArgs>(WaveIn_RecordingStopped); // Прикрепляем обработчик завершения записи 
@@ -237,7 +227,6 @@ namespace Rec_radio
                     case "LINE_IN":
                         waveIn = new WaveInEvent();
                         waveIn.DeviceNumber = selectedDevice; //Дефолтное устройство для записи (если оно имеется)
-                        waveIn.DataAvailable += WaveIn_DataAvailable_Float;
                         waveIn.DataAvailable += WaveIn_Char;
                         waveIn.DataAvailable += new EventHandler<WaveInEventArgs>(WaveIn_DataAvailable);  //Прикрепляем к событию DataAvailable обработчик, возникающий при наличии записываемых данных
                         waveIn.RecordingStopped += new EventHandler<StoppedEventArgs>(WaveIn_RecordingStopped);  // Прикрепляем обработчик завершения записи 
@@ -510,12 +499,7 @@ namespace Rec_radio
 
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            checkedRB = Properties.Settings.Default.checkedRB; //читаем
-            (new RadioButton[] { rbtnMono, rbtnStereo })[checkedRB].Checked = true; // чекаем нужный rb
-
-        }
+        
         private void rbtnMono_CheckedChanged(object sender, EventArgs e)
         {
             //if ((sender as RadioButton).Checked)
@@ -622,8 +606,8 @@ namespace Rec_radio
                     BackgroundColor = Color.Transparent
                 };
                 myRendererSettings.Width = 410;
-                myRendererSettings.TopHeight = 30;
-                myRendererSettings.BottomHeight = 30;
+                myRendererSettings.TopHeight = 35;
+                myRendererSettings.BottomHeight = 35;
                 myRendererSettings.BackgroundColor = Color.FromArgb(0, 120, 120, 120);
 
 
@@ -938,19 +922,16 @@ namespace Rec_radio
             cmbxSampleRate.Enabled = false;
             cmbxLame.Enabled = true;
         }
-
         private void rbtnCheckedChanged_Wav(object sender, EventArgs e)
         {
             cmbxLame.Enabled = true;
             cmbxSampleRate.Enabled = true;
         }
-
         private void rbtnCheckedChanged_WmaAac(object sender, EventArgs e)
         {
             cmbxSampleRate.Enabled = false;
             cmbxLame.Enabled = false;
-        }
-       
+        }     
         //Открыть папку с конвертируемыми аудио файлами
         private void btnClick_Dir(object sender, EventArgs e)
         {
@@ -965,7 +946,6 @@ namespace Rec_radio
             }
             
         }
-
         private void checkDataDir_CheckedChanged(object sender, EventArgs e)
         {
             if(checkDataDir.Checked == true)
