@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Tree = new System.Windows.Forms.NotifyIcon(this.components);
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.delMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.audioPogressBar = new Rec_radio.AudioProgressBar();
-            this.trackBarAudio = new MetroFramework.Controls.MetroTrackBar();
-            this.buttonOpenDir = new System.Windows.Forms.Button();
+            this.tbpPlayer = new System.Windows.Forms.TabPage();
+            this.prbAudioTrack = new Rec_radio.AudioProgressBar();
+            this.trbAudio = new MetroFramework.Controls.MetroTrackBar();
+            this.btnOpenDir = new System.Windows.Forms.Button();
             this.buttonStopAudio = new System.Windows.Forms.Button();
             this.listViewInfoTrack = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,60 +50,60 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelTimeStop = new System.Windows.Forms.Label();
             this.labelTimeStart = new System.Windows.Forms.Label();
-            this.buttonRefresh = new System.Windows.Forms.Button();
-            this.buttonPush = new System.Windows.Forms.Button();
-            this.buttonPause = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnPush = new System.Windows.Forms.Button();
+            this.btnPause = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.radioButtonStereo = new System.Windows.Forms.RadioButton();
-            this.radioButtonMono = new System.Windows.Forms.RadioButton();
+            this.rbtnStereo = new System.Windows.Forms.RadioButton();
+            this.rbtnMono = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.directoryName = new System.Windows.Forms.TextBox();
-            this.Record = new System.Windows.Forms.TabPage();
-            this.folderDir = new System.Windows.Forms.Button();
+            this.txtbDirectoryName = new System.Windows.Forms.TextBox();
+            this.tbpRecord = new System.Windows.Forms.TabPage();
+            this.btnFolderDir = new System.Windows.Forms.Button();
             this.chart_Animation = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.buttonStartRec = new System.Windows.Forms.Button();
+            this.btnStartRec = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.buttonStopRec = new System.Windows.Forms.Button();
+            this.btnStopRec = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxCheck = new System.Windows.Forms.ComboBox();
-            this.pictureBoxFront = new System.Windows.Forms.PictureBox();
-            this.labelState = new System.Windows.Forms.Label();
+            this.cmbxCheck = new System.Windows.Forms.ComboBox();
+            this.pbxFront = new System.Windows.Forms.PictureBox();
+            this.lbState = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBoxBack = new System.Windows.Forms.PictureBox();
-            this.comboBoxCapture = new System.Windows.Forms.ComboBox();
-            this.comboBoxKhz = new System.Windows.Forms.ComboBox();
-            this.comboBoxKbps = new System.Windows.Forms.ComboBox();
-            this.panelSettingPlayer = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pbxBack = new System.Windows.Forms.PictureBox();
+            this.cmbxCapture = new System.Windows.Forms.ComboBox();
+            this.cmbxKhz = new System.Windows.Forms.ComboBox();
+            this.cmbxKbps = new System.Windows.Forms.ComboBox();
+            this.tbcPanel = new System.Windows.Forms.TabControl();
+            this.tbpSettings = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonWma = new System.Windows.Forms.RadioButton();
-            this.buttonOpen = new System.Windows.Forms.Button();
-            this.buttonRemote = new System.Windows.Forms.Button();
-            this.radioButtonAac = new System.Windows.Forms.RadioButton();
-            this.comboBoxLame = new System.Windows.Forms.ComboBox();
-            this.comboBoxSampleRate = new System.Windows.Forms.ComboBox();
+            this.rbtnWma = new System.Windows.Forms.RadioButton();
+            this.btnOpen = new System.Windows.Forms.Button();
+            this.btnRemote = new System.Windows.Forms.Button();
+            this.rbtnAac = new System.Windows.Forms.RadioButton();
+            this.cmbxLame = new System.Windows.Forms.ComboBox();
+            this.cmbxSampleRate = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBoxFileAudio = new System.Windows.Forms.TextBox();
-            this.radioButtonWav = new System.Windows.Forms.RadioButton();
+            this.txtbFileAudio = new System.Windows.Forms.TextBox();
+            this.rbtnWav = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
-            this.radioButtonMp3 = new System.Windows.Forms.RadioButton();
+            this.rbtnMp3 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.checkDataDir = new System.Windows.Forms.CheckBox();
-            this.buttonSaveSettings = new System.Windows.Forms.Button();
+            this.btnSaveSettings = new System.Windows.Forms.Button();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.listBoxInfo = new System.Windows.Forms.ListBox();
             this.contextMenuStrip.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.Record.SuspendLayout();
+            this.tbpPlayer.SuspendLayout();
+            this.tbpRecord.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_Animation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFront)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).BeginInit();
-            this.panelSettingPlayer.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFront)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).BeginInit();
+            this.tbcPanel.SuspendLayout();
+            this.tbpSettings.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -111,7 +111,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.Timer_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimerTick);
             // 
             // Tree
             // 
@@ -145,76 +145,76 @@
             this.delMenuItem.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             this.delMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             // 
-            // tabPage2
+            // tbpPlayer
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
-            this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.tabPage2.Controls.Add(this.audioPogressBar);
-            this.tabPage2.Controls.Add(this.trackBarAudio);
-            this.tabPage2.Controls.Add(this.buttonOpenDir);
-            this.tabPage2.Controls.Add(this.buttonStopAudio);
-            this.tabPage2.Controls.Add(this.listViewInfoTrack);
-            this.tabPage2.Controls.Add(this.labelTimeStop);
-            this.tabPage2.Controls.Add(this.labelTimeStart);
-            this.tabPage2.Controls.Add(this.buttonRefresh);
-            this.tabPage2.Controls.Add(this.buttonPush);
-            this.tabPage2.Controls.Add(this.buttonPause);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(421, 273);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Player";
+            this.tbpPlayer.BackColor = System.Drawing.SystemColors.Window;
+            this.tbpPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.tbpPlayer.Controls.Add(this.prbAudioTrack);
+            this.tbpPlayer.Controls.Add(this.trbAudio);
+            this.tbpPlayer.Controls.Add(this.btnOpenDir);
+            this.tbpPlayer.Controls.Add(this.buttonStopAudio);
+            this.tbpPlayer.Controls.Add(this.listViewInfoTrack);
+            this.tbpPlayer.Controls.Add(this.labelTimeStop);
+            this.tbpPlayer.Controls.Add(this.labelTimeStart);
+            this.tbpPlayer.Controls.Add(this.btnRefresh);
+            this.tbpPlayer.Controls.Add(this.btnPush);
+            this.tbpPlayer.Controls.Add(this.btnPause);
+            this.tbpPlayer.Location = new System.Drawing.Point(4, 22);
+            this.tbpPlayer.Name = "tbpPlayer";
+            this.tbpPlayer.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpPlayer.Size = new System.Drawing.Size(421, 273);
+            this.tbpPlayer.TabIndex = 1;
+            this.tbpPlayer.Text = "Player";
             // 
-            // audioPogressBar
+            // prbAudioTrack
             // 
-            this.audioPogressBar.BackColor = System.Drawing.Color.Transparent;
-            this.audioPogressBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.audioPogressBar.BorderColor = System.Drawing.Color.Empty;
-            this.audioPogressBar.BorderWidth = 120;
-            this.audioPogressBar.ForeColor = System.Drawing.Color.Black;
-            this.audioPogressBar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.audioPogressBar.Location = new System.Drawing.Point(6, 20);
-            this.audioPogressBar.MaxValue = 100;
-            this.audioPogressBar.MinValue = 0;
-            this.audioPogressBar.Name = "audioPogressBar";
-            this.audioPogressBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(255)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
-            this.audioPogressBar.ProgressTextType = Rec_radio.AudioProgressBar.AudioProgressTextType.Percent;
-            this.audioPogressBar.ShowProgressText = false;
-            this.audioPogressBar.Size = new System.Drawing.Size(409, 70);
-            this.audioPogressBar.TabIndex = 25;
-            this.audioPogressBar.Text = "AudioProgressBar";
-            this.audioPogressBar.Value = 0;
+            this.prbAudioTrack.BackColor = System.Drawing.Color.Transparent;
+            this.prbAudioTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.prbAudioTrack.BorderColor = System.Drawing.Color.Empty;
+            this.prbAudioTrack.BorderWidth = 120;
+            this.prbAudioTrack.ForeColor = System.Drawing.Color.Black;
+            this.prbAudioTrack.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.prbAudioTrack.Location = new System.Drawing.Point(6, 20);
+            this.prbAudioTrack.MaxValue = 100;
+            this.prbAudioTrack.MinValue = 0;
+            this.prbAudioTrack.Name = "prbAudioTrack";
+            this.prbAudioTrack.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(255)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
+            this.prbAudioTrack.ProgressTextType = Rec_radio.AudioProgressBar.AudioProgressTextType.Percent;
+            this.prbAudioTrack.ShowProgressText = false;
+            this.prbAudioTrack.Size = new System.Drawing.Size(409, 70);
+            this.prbAudioTrack.TabIndex = 25;
+            this.prbAudioTrack.Text = "AudioProgressBar";
+            this.prbAudioTrack.Value = 0;
             // 
-            // trackBarAudio
+            // trbAudio
             // 
-            this.trackBarAudio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.trackBarAudio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.trackBarAudio.Location = new System.Drawing.Point(6, 94);
-            this.trackBarAudio.MouseWheelBarPartitions = 1;
-            this.trackBarAudio.Name = "trackBarAudio";
-            this.trackBarAudio.Size = new System.Drawing.Size(409, 10);
-            this.trackBarAudio.TabIndex = 26;
-            this.trackBarAudio.Text = "metroTrackBar1";
-            this.trackBarAudio.Value = 0;
-            this.trackBarAudio.Scroll += new System.Windows.Forms.ScrollEventHandler(this.MetroTrackBar_Scroll);
+            this.trbAudio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.trbAudio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.trbAudio.Location = new System.Drawing.Point(6, 94);
+            this.trbAudio.MouseWheelBarPartitions = 1;
+            this.trbAudio.Name = "trbAudio";
+            this.trbAudio.Size = new System.Drawing.Size(409, 10);
+            this.trbAudio.TabIndex = 26;
+            this.trbAudio.Text = "metroTrackBar1";
+            this.trbAudio.Value = 0;
+            this.trbAudio.Scroll += new System.Windows.Forms.ScrollEventHandler(this.metroTrackBar_Scroll);
             // 
-            // buttonOpenDir
+            // btnOpenDir
             // 
-            this.buttonOpenDir.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonOpenDir.BackgroundImage = global::Rec_radio.Properties.Resources.folder_dir;
-            this.buttonOpenDir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonOpenDir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonOpenDir.FlatAppearance.BorderSize = 0;
-            this.buttonOpenDir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonOpenDir.ForeColor = System.Drawing.Color.Black;
-            this.buttonOpenDir.Location = new System.Drawing.Point(247, 109);
-            this.buttonOpenDir.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonOpenDir.Name = "buttonOpenDir";
-            this.buttonOpenDir.Size = new System.Drawing.Size(30, 30);
-            this.buttonOpenDir.TabIndex = 32;
-            this.buttonOpenDir.UseVisualStyleBackColor = false;
-            this.buttonOpenDir.Click += new System.EventHandler(this.Button_Click_OpenDir);
+            this.btnOpenDir.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnOpenDir.BackgroundImage = global::Rec_radio.Properties.Resources.folder_dir;
+            this.btnOpenDir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnOpenDir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenDir.FlatAppearance.BorderSize = 0;
+            this.btnOpenDir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOpenDir.ForeColor = System.Drawing.Color.Black;
+            this.btnOpenDir.Location = new System.Drawing.Point(247, 109);
+            this.btnOpenDir.Margin = new System.Windows.Forms.Padding(1);
+            this.btnOpenDir.Name = "btnOpenDir";
+            this.btnOpenDir.Size = new System.Drawing.Size(30, 30);
+            this.btnOpenDir.TabIndex = 32;
+            this.btnOpenDir.UseVisualStyleBackColor = false;
+            this.btnOpenDir.Click += new System.EventHandler(this.btnClick_OpenDir);
             // 
             // buttonStopAudio
             // 
@@ -230,7 +230,7 @@
             this.buttonStopAudio.Size = new System.Drawing.Size(30, 30);
             this.buttonStopAudio.TabIndex = 31;
             this.buttonStopAudio.UseVisualStyleBackColor = false;
-            this.buttonStopAudio.Click += new System.EventHandler(this.Stop_Menu_Item_Click);
+            this.buttonStopAudio.Click += new System.EventHandler(this.stopMenuItem_Click);
             // 
             // listViewInfoTrack
             // 
@@ -251,7 +251,7 @@
             this.listViewInfoTrack.TabIndex = 22;
             this.listViewInfoTrack.UseCompatibleStateImageBehavior = false;
             this.listViewInfoTrack.View = System.Windows.Forms.View.Details;
-            this.listViewInfoTrack.DoubleClick += new System.EventHandler(this.Playlist_Play_Click);
+            this.listViewInfoTrack.DoubleClick += new System.EventHandler(this.playlistPlay_Click);
             // 
             // columnHeader1
             // 
@@ -294,54 +294,54 @@
             this.labelTimeStart.TabIndex = 24;
             this.labelTimeStart.Text = "0:00:00";
             // 
-            // buttonRefresh
+            // btnRefresh
             // 
-            this.buttonRefresh.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonRefresh.BackgroundImage = global::Rec_radio.Properties.Resources.updata;
-            this.buttonRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRefresh.FlatAppearance.BorderSize = 0;
-            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonRefresh.ForeColor = System.Drawing.Color.Black;
-            this.buttonRefresh.Location = new System.Drawing.Point(215, 109);
-            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(30, 30);
-            this.buttonRefresh.TabIndex = 21;
-            this.buttonRefresh.UseVisualStyleBackColor = false;
-            this.buttonRefresh.Click += new System.EventHandler(this.Button_Click_Refresh);
+            this.btnRefresh.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRefresh.BackgroundImage = global::Rec_radio.Properties.Resources.updata;
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRefresh.ForeColor = System.Drawing.Color.Black;
+            this.btnRefresh.Location = new System.Drawing.Point(215, 109);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(1);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(30, 30);
+            this.btnRefresh.TabIndex = 21;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnClick_Refresh);
             // 
-            // buttonPush
+            // btnPush
             // 
-            this.buttonPush.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonPush.BackgroundImage = global::Rec_radio.Properties.Resources.play;
-            this.buttonPush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPush.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPush.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonPush.ForeColor = System.Drawing.Color.Black;
-            this.buttonPush.Location = new System.Drawing.Point(119, 109);
-            this.buttonPush.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonPush.Name = "buttonPush";
-            this.buttonPush.Size = new System.Drawing.Size(30, 30);
-            this.buttonPush.TabIndex = 20;
-            this.buttonPush.UseVisualStyleBackColor = false;
-            this.buttonPush.Click += new System.EventHandler(this.Play_Menu_Item_Click);
+            this.btnPush.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPush.BackgroundImage = global::Rec_radio.Properties.Resources.play;
+            this.btnPush.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPush.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPush.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPush.ForeColor = System.Drawing.Color.Black;
+            this.btnPush.Location = new System.Drawing.Point(119, 109);
+            this.btnPush.Margin = new System.Windows.Forms.Padding(1);
+            this.btnPush.Name = "btnPush";
+            this.btnPush.Size = new System.Drawing.Size(30, 30);
+            this.btnPush.TabIndex = 20;
+            this.btnPush.UseVisualStyleBackColor = false;
+            this.btnPush.Click += new System.EventHandler(this.playMenuItem_Click);
             // 
-            // buttonPause
+            // btnPause
             // 
-            this.buttonPause.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonPause.BackgroundImage = global::Rec_radio.Properties.Resources.pause_play;
-            this.buttonPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonPause.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonPause.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonPause.ForeColor = System.Drawing.Color.Black;
-            this.buttonPause.Location = new System.Drawing.Point(151, 109);
-            this.buttonPause.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonPause.Name = "buttonPause";
-            this.buttonPause.Size = new System.Drawing.Size(30, 30);
-            this.buttonPause.TabIndex = 30;
-            this.buttonPause.UseVisualStyleBackColor = false;
-            this.buttonPause.Click += new System.EventHandler(this.Pause_Menu_Item_Click);
+            this.btnPause.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPause.BackgroundImage = global::Rec_radio.Properties.Resources.pause_play;
+            this.btnPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPause.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPause.ForeColor = System.Drawing.Color.Black;
+            this.btnPause.Location = new System.Drawing.Point(151, 109);
+            this.btnPause.Margin = new System.Windows.Forms.Padding(1);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(30, 30);
+            this.btnPause.TabIndex = 30;
+            this.btnPause.UseVisualStyleBackColor = false;
+            this.btnPause.Click += new System.EventHandler(this.pauseMenuItem_Click);
             // 
             // label8
             // 
@@ -370,31 +370,31 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "kHz";
             // 
-            // radioButtonStereo
+            // rbtnStereo
             // 
-            this.radioButtonStereo.AutoSize = true;
-            this.radioButtonStereo.Location = new System.Drawing.Point(304, 87);
-            this.radioButtonStereo.Name = "radioButtonStereo";
-            this.radioButtonStereo.Size = new System.Drawing.Size(56, 17);
-            this.radioButtonStereo.TabIndex = 20;
-            this.radioButtonStereo.TabStop = true;
-            this.radioButtonStereo.Tag = "1";
-            this.radioButtonStereo.Text = "Stereo";
-            this.radioButtonStereo.UseVisualStyleBackColor = true;
-            this.radioButtonStereo.CheckedChanged += new System.EventHandler(this.RadioButtonStereo_CheckedChanged);
+            this.rbtnStereo.AutoSize = true;
+            this.rbtnStereo.Location = new System.Drawing.Point(304, 87);
+            this.rbtnStereo.Name = "rbtnStereo";
+            this.rbtnStereo.Size = new System.Drawing.Size(56, 17);
+            this.rbtnStereo.TabIndex = 20;
+            this.rbtnStereo.TabStop = true;
+            this.rbtnStereo.Tag = "1";
+            this.rbtnStereo.Text = "Stereo";
+            this.rbtnStereo.UseVisualStyleBackColor = true;
+            this.rbtnStereo.CheckedChanged += new System.EventHandler(this.rbtnStereo_CheckedChanged);
             // 
-            // radioButtonMono
+            // rbtnMono
             // 
-            this.radioButtonMono.AutoSize = true;
-            this.radioButtonMono.Location = new System.Drawing.Point(246, 87);
-            this.radioButtonMono.Name = "radioButtonMono";
-            this.radioButtonMono.Size = new System.Drawing.Size(52, 17);
-            this.radioButtonMono.TabIndex = 19;
-            this.radioButtonMono.TabStop = true;
-            this.radioButtonMono.Tag = "0";
-            this.radioButtonMono.Text = "Mono";
-            this.radioButtonMono.UseVisualStyleBackColor = true;
-            this.radioButtonMono.CheckedChanged += new System.EventHandler(this.RadioButtonMono_CheckedChanged);
+            this.rbtnMono.AutoSize = true;
+            this.rbtnMono.Location = new System.Drawing.Point(246, 87);
+            this.rbtnMono.Name = "rbtnMono";
+            this.rbtnMono.Size = new System.Drawing.Size(52, 17);
+            this.rbtnMono.TabIndex = 19;
+            this.rbtnMono.TabStop = true;
+            this.rbtnMono.Tag = "0";
+            this.rbtnMono.Text = "Mono";
+            this.rbtnMono.UseVisualStyleBackColor = true;
+            this.rbtnMono.CheckedChanged += new System.EventHandler(this.rbtnMono_CheckedChanged);
             // 
             // label2
             // 
@@ -405,104 +405,104 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Directory";
             // 
-            // directoryName
+            // txtbDirectoryName
             // 
-            this.directoryName.Location = new System.Drawing.Point(62, 24);
-            this.directoryName.Name = "directoryName";
-            this.directoryName.Size = new System.Drawing.Size(206, 20);
-            this.directoryName.TabIndex = 0;
-            this.directoryName.Text = "D:\\AUDIO\\";
+            this.txtbDirectoryName.Location = new System.Drawing.Point(62, 24);
+            this.txtbDirectoryName.Name = "txtbDirectoryName";
+            this.txtbDirectoryName.Size = new System.Drawing.Size(206, 20);
+            this.txtbDirectoryName.TabIndex = 0;
+            this.txtbDirectoryName.Text = "D:\\AUDIO\\";
             // 
-            // Record
+            // tbpRecord
             // 
-            this.Record.BackColor = System.Drawing.SystemColors.Window;
-            this.Record.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Record.Controls.Add(this.folderDir);
-            this.Record.Controls.Add(this.chart_Animation);
-            this.Record.Controls.Add(this.buttonStartRec);
-            this.Record.Controls.Add(this.label9);
-            this.Record.Controls.Add(this.buttonStopRec);
-            this.Record.Controls.Add(this.label4);
-            this.Record.Controls.Add(this.comboBoxCheck);
-            this.Record.Controls.Add(this.pictureBoxFront);
-            this.Record.Controls.Add(this.labelState);
-            this.Record.Controls.Add(this.label3);
-            this.Record.Controls.Add(this.pictureBoxBack);
-            this.Record.Location = new System.Drawing.Point(4, 22);
-            this.Record.Name = "Record";
-            this.Record.Padding = new System.Windows.Forms.Padding(3);
-            this.Record.Size = new System.Drawing.Size(421, 273);
-            this.Record.TabIndex = 0;
-            this.Record.Text = "Record";
+            this.tbpRecord.BackColor = System.Drawing.SystemColors.Window;
+            this.tbpRecord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tbpRecord.Controls.Add(this.btnFolderDir);
+            this.tbpRecord.Controls.Add(this.chart_Animation);
+            this.tbpRecord.Controls.Add(this.btnStartRec);
+            this.tbpRecord.Controls.Add(this.label9);
+            this.tbpRecord.Controls.Add(this.btnStopRec);
+            this.tbpRecord.Controls.Add(this.label4);
+            this.tbpRecord.Controls.Add(this.cmbxCheck);
+            this.tbpRecord.Controls.Add(this.pbxFront);
+            this.tbpRecord.Controls.Add(this.lbState);
+            this.tbpRecord.Controls.Add(this.label3);
+            this.tbpRecord.Controls.Add(this.pbxBack);
+            this.tbpRecord.Location = new System.Drawing.Point(4, 22);
+            this.tbpRecord.Name = "tbpRecord";
+            this.tbpRecord.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpRecord.Size = new System.Drawing.Size(421, 273);
+            this.tbpRecord.TabIndex = 0;
+            this.tbpRecord.Text = "Record";
             // 
-            // folderDir
+            // btnFolderDir
             // 
-            this.folderDir.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.folderDir.BackgroundImage = global::Rec_radio.Properties.Resources.folder_dir;
-            this.folderDir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.folderDir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.folderDir.FlatAppearance.BorderSize = 0;
-            this.folderDir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.folderDir.ForeColor = System.Drawing.Color.Black;
-            this.folderDir.Location = new System.Drawing.Point(56, 44);
-            this.folderDir.Margin = new System.Windows.Forms.Padding(1);
-            this.folderDir.Name = "folderDir";
-            this.folderDir.Size = new System.Drawing.Size(30, 30);
-            this.folderDir.TabIndex = 25;
-            this.folderDir.UseVisualStyleBackColor = false;
-            this.folderDir.Click += new System.EventHandler(this.Button_Click_OpenDir);
+            this.btnFolderDir.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFolderDir.BackgroundImage = global::Rec_radio.Properties.Resources.folder_dir;
+            this.btnFolderDir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFolderDir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFolderDir.FlatAppearance.BorderSize = 0;
+            this.btnFolderDir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFolderDir.ForeColor = System.Drawing.Color.Black;
+            this.btnFolderDir.Location = new System.Drawing.Point(56, 44);
+            this.btnFolderDir.Margin = new System.Windows.Forms.Padding(1);
+            this.btnFolderDir.Name = "btnFolderDir";
+            this.btnFolderDir.Size = new System.Drawing.Size(30, 30);
+            this.btnFolderDir.TabIndex = 25;
+            this.btnFolderDir.UseVisualStyleBackColor = false;
+            this.btnFolderDir.Click += new System.EventHandler(this.btnClick_OpenDir);
             // 
             // chart_Animation
             // 
             this.chart_Animation.BackColor = System.Drawing.Color.Transparent;
             this.chart_Animation.BackSecondaryColor = System.Drawing.Color.Silver;
-            chartArea2.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.None;
-            chartArea2.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.None;
-            chartArea2.AxisY2.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.Straight;
-            chartArea2.BackColor = System.Drawing.Color.White;
-            chartArea2.BorderColor = System.Drawing.Color.White;
-            chartArea2.Name = "ChartArea1";
-            this.chart_Animation.ChartAreas.Add(chartArea2);
-            legend2.Enabled = false;
-            legend2.HeaderSeparatorColor = System.Drawing.Color.Silver;
-            legend2.ItemColumnSeparatorColor = System.Drawing.Color.Gainsboro;
-            legend2.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
-            legend2.Name = "Legend1";
-            legend2.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
-            this.chart_Animation.Legends.Add(legend2);
+            chartArea1.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.None;
+            chartArea1.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.None;
+            chartArea1.AxisY2.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.Straight;
+            chartArea1.BackColor = System.Drawing.Color.White;
+            chartArea1.BorderColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            this.chart_Animation.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.HeaderSeparatorColor = System.Drawing.Color.Silver;
+            legend1.ItemColumnSeparatorColor = System.Drawing.Color.Gainsboro;
+            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
+            legend1.Name = "Legend1";
+            legend1.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
+            this.chart_Animation.Legends.Add(legend1);
             this.chart_Animation.Location = new System.Drawing.Point(3, 115);
             this.chart_Animation.Name = "chart_Animation";
             this.chart_Animation.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chart_Animation.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.ForestGreen};
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Red;
-            series2.LabelForeColor = System.Drawing.Color.Empty;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.YValuesPerPoint = 4;
-            this.chart_Animation.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Red;
+            series1.LabelForeColor = System.Drawing.Color.Empty;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 4;
+            this.chart_Animation.Series.Add(series1);
             this.chart_Animation.Size = new System.Drawing.Size(417, 155);
             this.chart_Animation.TabIndex = 24;
             this.chart_Animation.Text = "chart1";
             // 
-            // buttonStartRec
+            // btnStartRec
             // 
-            this.buttonStartRec.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonStartRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonStartRec.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonStartRec.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonStartRec.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold);
-            this.buttonStartRec.ForeColor = System.Drawing.Color.Black;
-            this.buttonStartRec.Location = new System.Drawing.Point(48, 15);
-            this.buttonStartRec.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonStartRec.Name = "buttonStartRec";
-            this.buttonStartRec.Size = new System.Drawing.Size(38, 23);
-            this.buttonStartRec.TabIndex = 19;
-            this.buttonStartRec.Text = "REC";
-            this.buttonStartRec.UseVisualStyleBackColor = false;
-            this.buttonStartRec.Click += new System.EventHandler(this.Button_Click_StartRec);
+            this.btnStartRec.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStartRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnStartRec.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStartRec.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStartRec.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold);
+            this.btnStartRec.ForeColor = System.Drawing.Color.Black;
+            this.btnStartRec.Location = new System.Drawing.Point(48, 15);
+            this.btnStartRec.Margin = new System.Windows.Forms.Padding(1);
+            this.btnStartRec.Name = "btnStartRec";
+            this.btnStartRec.Size = new System.Drawing.Size(38, 23);
+            this.btnStartRec.TabIndex = 19;
+            this.btnStartRec.Text = "REC";
+            this.btnStartRec.UseVisualStyleBackColor = false;
+            this.btnStartRec.Click += new System.EventHandler(this.btnClickStartRec);
             // 
             // label9
             // 
@@ -513,21 +513,21 @@
             this.label9.TabIndex = 18;
             this.label9.Text = "info track";
             // 
-            // buttonStopRec
+            // btnStopRec
             // 
-            this.buttonStopRec.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonStopRec.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonStopRec.BackgroundImage")));
-            this.buttonStopRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonStopRec.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonStopRec.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonStopRec.ForeColor = System.Drawing.Color.Black;
-            this.buttonStopRec.Location = new System.Drawing.Point(8, 15);
-            this.buttonStopRec.Margin = new System.Windows.Forms.Padding(1);
-            this.buttonStopRec.Name = "buttonStopRec";
-            this.buttonStopRec.Size = new System.Drawing.Size(38, 23);
-            this.buttonStopRec.TabIndex = 12;
-            this.buttonStopRec.UseVisualStyleBackColor = false;
-            this.buttonStopRec.Click += new System.EventHandler(this.Stop_Click);
+            this.btnStopRec.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnStopRec.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnStopRec.BackgroundImage")));
+            this.btnStopRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnStopRec.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStopRec.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStopRec.ForeColor = System.Drawing.Color.Black;
+            this.btnStopRec.Location = new System.Drawing.Point(8, 15);
+            this.btnStopRec.Margin = new System.Windows.Forms.Padding(1);
+            this.btnStopRec.Name = "btnStopRec";
+            this.btnStopRec.Size = new System.Drawing.Size(38, 23);
+            this.btnStopRec.TabIndex = 12;
+            this.btnStopRec.UseVisualStyleBackColor = false;
+            this.btnStopRec.Click += new System.EventHandler(this.StopClick);
             // 
             // label4
             // 
@@ -540,38 +540,38 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "labelDateTime";
             // 
-            // comboBoxCheck
+            // cmbxCheck
             // 
-            this.comboBoxCheck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCheck.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBoxCheck.FormattingEnabled = true;
-            this.comboBoxCheck.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBoxCheck.Location = new System.Drawing.Point(90, 50);
-            this.comboBoxCheck.Name = "comboBoxCheck";
-            this.comboBoxCheck.Size = new System.Drawing.Size(325, 21);
-            this.comboBoxCheck.TabIndex = 13;
-            this.comboBoxCheck.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCheck_SelectedIndexChanged);
+            this.cmbxCheck.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxCheck.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbxCheck.FormattingEnabled = true;
+            this.cmbxCheck.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbxCheck.Location = new System.Drawing.Point(90, 50);
+            this.cmbxCheck.Name = "cmbxCheck";
+            this.cmbxCheck.Size = new System.Drawing.Size(325, 21);
+            this.cmbxCheck.TabIndex = 13;
+            this.cmbxCheck.SelectedIndexChanged += new System.EventHandler(this.cmbx_SelectedIndexChanged);
             // 
-            // pictureBoxFront
+            // pbxFront
             // 
-            this.pictureBoxFront.ErrorImage = null;
-            this.pictureBoxFront.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFront.Image")));
-            this.pictureBoxFront.Location = new System.Drawing.Point(91, 16);
-            this.pictureBoxFront.Name = "pictureBoxFront";
-            this.pictureBoxFront.Size = new System.Drawing.Size(324, 14);
-            this.pictureBoxFront.TabIndex = 16;
-            this.pictureBoxFront.TabStop = false;
+            this.pbxFront.ErrorImage = null;
+            this.pbxFront.Image = ((System.Drawing.Image)(resources.GetObject("pbxFront.Image")));
+            this.pbxFront.Location = new System.Drawing.Point(91, 16);
+            this.pbxFront.Name = "pbxFront";
+            this.pbxFront.Size = new System.Drawing.Size(324, 14);
+            this.pbxFront.TabIndex = 16;
+            this.pbxFront.TabStop = false;
             // 
-            // labelState
+            // lbState
             // 
-            this.labelState.AutoSize = true;
-            this.labelState.BackColor = System.Drawing.Color.Transparent;
-            this.labelState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.labelState.Location = new System.Drawing.Point(92, 34);
-            this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(36, 13);
-            this.labelState.TabIndex = 15;
-            this.labelState.Text = "0.00%";
+            this.lbState.AutoSize = true;
+            this.lbState.BackColor = System.Drawing.Color.Transparent;
+            this.lbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lbState.Location = new System.Drawing.Point(92, 34);
+            this.lbState.Name = "lbState";
+            this.lbState.Size = new System.Drawing.Size(36, 13);
+            this.lbState.TabIndex = 15;
+            this.lbState.Text = "0.00%";
             // 
             // label3
             // 
@@ -585,88 +585,88 @@
             this.label3.Text = "RECORDING";
             this.label3.Visible = false;
             // 
-            // pictureBoxBack
+            // pbxBack
             // 
-            this.pictureBoxBack.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBoxBack.ErrorImage = null;
-            this.pictureBoxBack.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBack.Image")));
-            this.pictureBoxBack.Location = new System.Drawing.Point(90, 15);
-            this.pictureBoxBack.Name = "pictureBoxBack";
-            this.pictureBoxBack.Size = new System.Drawing.Size(325, 17);
-            this.pictureBoxBack.TabIndex = 17;
-            this.pictureBoxBack.TabStop = false;
+            this.pbxBack.BackColor = System.Drawing.Color.LightGray;
+            this.pbxBack.ErrorImage = null;
+            this.pbxBack.Image = ((System.Drawing.Image)(resources.GetObject("pbxBack.Image")));
+            this.pbxBack.Location = new System.Drawing.Point(90, 15);
+            this.pbxBack.Name = "pbxBack";
+            this.pbxBack.Size = new System.Drawing.Size(325, 17);
+            this.pbxBack.TabIndex = 17;
+            this.pbxBack.TabStop = false;
             // 
-            // comboBoxCapture
+            // cmbxCapture
             // 
-            this.comboBoxCapture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCapture.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBoxCapture.FormattingEnabled = true;
-            this.comboBoxCapture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBoxCapture.Location = new System.Drawing.Point(62, 86);
-            this.comboBoxCapture.Name = "comboBoxCapture";
-            this.comboBoxCapture.Size = new System.Drawing.Size(163, 21);
-            this.comboBoxCapture.TabIndex = 18;
+            this.cmbxCapture.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxCapture.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbxCapture.FormattingEnabled = true;
+            this.cmbxCapture.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbxCapture.Location = new System.Drawing.Point(62, 86);
+            this.cmbxCapture.Name = "cmbxCapture";
+            this.cmbxCapture.Size = new System.Drawing.Size(163, 21);
+            this.cmbxCapture.TabIndex = 18;
             // 
-            // comboBoxKhz
+            // cmbxKhz
             // 
-            this.comboBoxKhz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKhz.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBoxKhz.FormattingEnabled = true;
-            this.comboBoxKhz.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBoxKhz.Location = new System.Drawing.Point(336, 22);
-            this.comboBoxKhz.Name = "comboBoxKhz";
-            this.comboBoxKhz.Size = new System.Drawing.Size(61, 21);
-            this.comboBoxKhz.TabIndex = 14;
+            this.cmbxKhz.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxKhz.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbxKhz.FormattingEnabled = true;
+            this.cmbxKhz.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbxKhz.Location = new System.Drawing.Point(336, 22);
+            this.cmbxKhz.Name = "cmbxKhz";
+            this.cmbxKhz.Size = new System.Drawing.Size(61, 21);
+            this.cmbxKhz.TabIndex = 14;
             // 
-            // comboBoxKbps
+            // cmbxKbps
             // 
-            this.comboBoxKbps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKbps.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBoxKbps.FormattingEnabled = true;
-            this.comboBoxKbps.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBoxKbps.Location = new System.Drawing.Point(337, 50);
-            this.comboBoxKbps.Name = "comboBoxKbps";
-            this.comboBoxKbps.Size = new System.Drawing.Size(60, 21);
-            this.comboBoxKbps.TabIndex = 15;
+            this.cmbxKbps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxKbps.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbxKbps.FormattingEnabled = true;
+            this.cmbxKbps.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbxKbps.Location = new System.Drawing.Point(337, 50);
+            this.cmbxKbps.Name = "cmbxKbps";
+            this.cmbxKbps.Size = new System.Drawing.Size(60, 21);
+            this.cmbxKbps.TabIndex = 15;
             // 
-            // panelSettingPlayer
+            // tbcPanel
             // 
-            this.panelSettingPlayer.Controls.Add(this.Record);
-            this.panelSettingPlayer.Controls.Add(this.tabPage2);
-            this.panelSettingPlayer.Controls.Add(this.tabPage1);
-            this.panelSettingPlayer.Location = new System.Drawing.Point(2, 3);
-            this.panelSettingPlayer.Multiline = true;
-            this.panelSettingPlayer.Name = "panelSettingPlayer";
-            this.panelSettingPlayer.SelectedIndex = 0;
-            this.panelSettingPlayer.Size = new System.Drawing.Size(429, 299);
-            this.panelSettingPlayer.TabIndex = 18;
+            this.tbcPanel.Controls.Add(this.tbpRecord);
+            this.tbcPanel.Controls.Add(this.tbpPlayer);
+            this.tbcPanel.Controls.Add(this.tbpSettings);
+            this.tbcPanel.Location = new System.Drawing.Point(2, 3);
+            this.tbcPanel.Multiline = true;
+            this.tbcPanel.Name = "tbcPanel";
+            this.tbcPanel.SelectedIndex = 0;
+            this.tbcPanel.Size = new System.Drawing.Size(429, 299);
+            this.tbcPanel.TabIndex = 18;
             // 
-            // tabPage1
+            // tbpSettings
             // 
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(421, 273);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Settings";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tbpSettings.Controls.Add(this.groupBox1);
+            this.tbpSettings.Controls.Add(this.groupBox2);
+            this.tbpSettings.Location = new System.Drawing.Point(4, 22);
+            this.tbpSettings.Name = "tbpSettings";
+            this.tbpSettings.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpSettings.Size = new System.Drawing.Size(421, 273);
+            this.tbpSettings.TabIndex = 2;
+            this.tbpSettings.Text = "Settings";
+            this.tbpSettings.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButtonWma);
-            this.groupBox1.Controls.Add(this.buttonOpen);
-            this.groupBox1.Controls.Add(this.buttonRemote);
-            this.groupBox1.Controls.Add(this.radioButtonAac);
-            this.groupBox1.Controls.Add(this.comboBoxLame);
-            this.groupBox1.Controls.Add(this.comboBoxSampleRate);
+            this.groupBox1.Controls.Add(this.rbtnWma);
+            this.groupBox1.Controls.Add(this.btnOpen);
+            this.groupBox1.Controls.Add(this.btnRemote);
+            this.groupBox1.Controls.Add(this.rbtnAac);
+            this.groupBox1.Controls.Add(this.cmbxLame);
+            this.groupBox1.Controls.Add(this.cmbxSampleRate);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBoxFileAudio);
-            this.groupBox1.Controls.Add(this.radioButtonWav);
+            this.groupBox1.Controls.Add(this.txtbFileAudio);
+            this.groupBox1.Controls.Add(this.rbtnWav);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.radioButtonMp3);
+            this.groupBox1.Controls.Add(this.rbtnMp3);
             this.groupBox1.Location = new System.Drawing.Point(6, 129);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(410, 130);
@@ -674,89 +674,89 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conversion";
             // 
-            // radioButtonWma
+            // rbtnWma
             // 
-            this.radioButtonWma.AutoSize = true;
-            this.radioButtonWma.Location = new System.Drawing.Point(256, 88);
-            this.radioButtonWma.Name = "radioButtonWma";
-            this.radioButtonWma.Size = new System.Drawing.Size(52, 17);
-            this.radioButtonWma.TabIndex = 28;
-            this.radioButtonWma.TabStop = true;
-            this.radioButtonWma.Tag = "1";
-            this.radioButtonWma.Text = "WMA";
-            this.radioButtonWma.UseVisualStyleBackColor = true;
-            this.radioButtonWma.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged_Wma_Aac);
+            this.rbtnWma.AutoSize = true;
+            this.rbtnWma.Location = new System.Drawing.Point(256, 88);
+            this.rbtnWma.Name = "rbtnWma";
+            this.rbtnWma.Size = new System.Drawing.Size(52, 17);
+            this.rbtnWma.TabIndex = 28;
+            this.rbtnWma.TabStop = true;
+            this.rbtnWma.Tag = "1";
+            this.rbtnWma.Text = "WMA";
+            this.rbtnWma.UseVisualStyleBackColor = true;
+            this.rbtnWma.CheckedChanged += new System.EventHandler(this.rbtnCheckedChanged_WmaAac);
             // 
-            // buttonOpen
+            // btnOpen
             // 
-            this.buttonOpen.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonOpen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonOpen.FlatAppearance.BorderSize = 0;
-            this.buttonOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonOpen.ForeColor = System.Drawing.Color.Black;
-            this.buttonOpen.ImageKey = "(отсутствует)";
-            this.buttonOpen.Location = new System.Drawing.Point(369, 42);
-            this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(28, 20);
-            this.buttonOpen.TabIndex = 26;
-            this.buttonOpen.Text = "...";
-            this.buttonOpen.UseVisualStyleBackColor = false;
-            this.buttonOpen.Click += new System.EventHandler(this.Button_Click_Open_Dir);
+            this.btnOpen.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnOpen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpen.FlatAppearance.BorderSize = 0;
+            this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnOpen.ForeColor = System.Drawing.Color.Black;
+            this.btnOpen.ImageKey = "(отсутствует)";
+            this.btnOpen.Location = new System.Drawing.Point(369, 42);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(28, 20);
+            this.btnOpen.TabIndex = 26;
+            this.btnOpen.Text = "...";
+            this.btnOpen.UseVisualStyleBackColor = false;
+            this.btnOpen.Click += new System.EventHandler(this.btnClick_Dir);
             // 
-            // buttonRemote
+            // btnRemote
             // 
-            this.buttonRemote.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonRemote.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRemote.BackgroundImage")));
-            this.buttonRemote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonRemote.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRemote.FlatAppearance.BorderSize = 0;
-            this.buttonRemote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonRemote.ForeColor = System.Drawing.Color.Black;
-            this.buttonRemote.ImageKey = "(отсутствует)";
-            this.buttonRemote.Location = new System.Drawing.Point(368, 92);
-            this.buttonRemote.Name = "buttonRemote";
-            this.buttonRemote.Size = new System.Drawing.Size(30, 30);
-            this.buttonRemote.TabIndex = 16;
-            this.buttonRemote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonRemote.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.buttonRemote.UseVisualStyleBackColor = false;
-            this.buttonRemote.Click += new System.EventHandler(this.Button_Click_Remonte);
+            this.btnRemote.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRemote.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemote.BackgroundImage")));
+            this.btnRemote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRemote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRemote.FlatAppearance.BorderSize = 0;
+            this.btnRemote.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRemote.ForeColor = System.Drawing.Color.Black;
+            this.btnRemote.ImageKey = "(отсутствует)";
+            this.btnRemote.Location = new System.Drawing.Point(368, 92);
+            this.btnRemote.Name = "btnRemote";
+            this.btnRemote.Size = new System.Drawing.Size(30, 30);
+            this.btnRemote.TabIndex = 16;
+            this.btnRemote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRemote.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnRemote.UseVisualStyleBackColor = false;
+            this.btnRemote.Click += new System.EventHandler(this.btnClick_Remonte);
             // 
-            // radioButtonAac
+            // rbtnAac
             // 
-            this.radioButtonAac.AutoSize = true;
-            this.radioButtonAac.Location = new System.Drawing.Point(256, 65);
-            this.radioButtonAac.Name = "radioButtonAac";
-            this.radioButtonAac.Size = new System.Drawing.Size(46, 17);
-            this.radioButtonAac.TabIndex = 27;
-            this.radioButtonAac.TabStop = true;
-            this.radioButtonAac.Tag = "1";
-            this.radioButtonAac.Text = "AAC";
-            this.radioButtonAac.UseVisualStyleBackColor = true;
-            this.radioButtonAac.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged_Wma_Aac);
+            this.rbtnAac.AutoSize = true;
+            this.rbtnAac.Location = new System.Drawing.Point(256, 65);
+            this.rbtnAac.Name = "rbtnAac";
+            this.rbtnAac.Size = new System.Drawing.Size(46, 17);
+            this.rbtnAac.TabIndex = 27;
+            this.rbtnAac.TabStop = true;
+            this.rbtnAac.Tag = "1";
+            this.rbtnAac.Text = "AAC";
+            this.rbtnAac.UseVisualStyleBackColor = true;
+            this.rbtnAac.CheckedChanged += new System.EventHandler(this.rbtnCheckedChanged_WmaAac);
             // 
-            // comboBoxLame
+            // cmbxLame
             // 
-            this.comboBoxLame.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxLame.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBoxLame.FormattingEnabled = true;
-            this.comboBoxLame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBoxLame.Location = new System.Drawing.Point(18, 84);
-            this.comboBoxLame.Name = "comboBoxLame";
-            this.comboBoxLame.Size = new System.Drawing.Size(105, 21);
-            this.comboBoxLame.TabIndex = 18;
+            this.cmbxLame.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxLame.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbxLame.FormattingEnabled = true;
+            this.cmbxLame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbxLame.Location = new System.Drawing.Point(18, 84);
+            this.cmbxLame.Name = "cmbxLame";
+            this.cmbxLame.Size = new System.Drawing.Size(105, 21);
+            this.cmbxLame.TabIndex = 18;
             // 
-            // comboBoxSampleRate
+            // cmbxSampleRate
             // 
-            this.comboBoxSampleRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSampleRate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBoxSampleRate.FormattingEnabled = true;
-            this.comboBoxSampleRate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBoxSampleRate.Location = new System.Drawing.Point(18, 42);
-            this.comboBoxSampleRate.Name = "comboBoxSampleRate";
-            this.comboBoxSampleRate.Size = new System.Drawing.Size(105, 21);
-            this.comboBoxSampleRate.TabIndex = 15;
+            this.cmbxSampleRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxSampleRate.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbxSampleRate.FormattingEnabled = true;
+            this.cmbxSampleRate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmbxSampleRate.Location = new System.Drawing.Point(18, 42);
+            this.cmbxSampleRate.Name = "cmbxSampleRate";
+            this.cmbxSampleRate.Size = new System.Drawing.Size(105, 21);
+            this.cmbxSampleRate.TabIndex = 15;
             // 
             // label16
             // 
@@ -776,25 +776,25 @@
             this.label13.TabIndex = 17;
             this.label13.Text = "Sample Rate";
             // 
-            // textBoxFileAudio
+            // txtbFileAudio
             // 
-            this.textBoxFileAudio.Location = new System.Drawing.Point(203, 42);
-            this.textBoxFileAudio.Name = "textBoxFileAudio";
-            this.textBoxFileAudio.Size = new System.Drawing.Size(160, 20);
-            this.textBoxFileAudio.TabIndex = 24;
+            this.txtbFileAudio.Location = new System.Drawing.Point(203, 42);
+            this.txtbFileAudio.Name = "txtbFileAudio";
+            this.txtbFileAudio.Size = new System.Drawing.Size(160, 20);
+            this.txtbFileAudio.TabIndex = 24;
             // 
-            // radioButtonWav
+            // rbtnWav
             // 
-            this.radioButtonWav.AutoSize = true;
-            this.radioButtonWav.Location = new System.Drawing.Point(203, 65);
-            this.radioButtonWav.Name = "radioButtonWav";
-            this.radioButtonWav.Size = new System.Drawing.Size(50, 17);
-            this.radioButtonWav.TabIndex = 21;
-            this.radioButtonWav.TabStop = true;
-            this.radioButtonWav.Tag = "1";
-            this.radioButtonWav.Text = "WAV";
-            this.radioButtonWav.UseVisualStyleBackColor = true;
-            this.radioButtonWav.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged_Wav);
+            this.rbtnWav.AutoSize = true;
+            this.rbtnWav.Location = new System.Drawing.Point(203, 65);
+            this.rbtnWav.Name = "rbtnWav";
+            this.rbtnWav.Size = new System.Drawing.Size(50, 17);
+            this.rbtnWav.TabIndex = 21;
+            this.rbtnWav.TabStop = true;
+            this.rbtnWav.Tag = "1";
+            this.rbtnWav.Text = "WAV";
+            this.rbtnWav.UseVisualStyleBackColor = true;
+            this.rbtnWav.CheckedChanged += new System.EventHandler(this.rbtnCheckedChanged_Wav);
             // 
             // label14
             // 
@@ -805,32 +805,32 @@
             this.label14.TabIndex = 19;
             this.label14.Text = "Lame Presed";
             // 
-            // radioButtonMp3
+            // rbtnMp3
             // 
-            this.radioButtonMp3.AutoSize = true;
-            this.radioButtonMp3.Location = new System.Drawing.Point(203, 88);
-            this.radioButtonMp3.Name = "radioButtonMp3";
-            this.radioButtonMp3.Size = new System.Drawing.Size(47, 17);
-            this.radioButtonMp3.TabIndex = 22;
-            this.radioButtonMp3.TabStop = true;
-            this.radioButtonMp3.Tag = "1";
-            this.radioButtonMp3.Text = "MP3";
-            this.radioButtonMp3.UseVisualStyleBackColor = true;
-            this.radioButtonMp3.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged_Mp3);
+            this.rbtnMp3.AutoSize = true;
+            this.rbtnMp3.Location = new System.Drawing.Point(203, 88);
+            this.rbtnMp3.Name = "rbtnMp3";
+            this.rbtnMp3.Size = new System.Drawing.Size(47, 17);
+            this.rbtnMp3.TabIndex = 22;
+            this.rbtnMp3.TabStop = true;
+            this.rbtnMp3.Tag = "1";
+            this.rbtnMp3.Text = "MP3";
+            this.rbtnMp3.UseVisualStyleBackColor = true;
+            this.rbtnMp3.CheckedChanged += new System.EventHandler(this.rbtnCheckedChanged_Mp3);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.checkDataDir);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.buttonSaveSettings);
+            this.groupBox2.Controls.Add(this.btnSaveSettings);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.directoryName);
-            this.groupBox2.Controls.Add(this.comboBoxCapture);
-            this.groupBox2.Controls.Add(this.radioButtonStereo);
-            this.groupBox2.Controls.Add(this.radioButtonMono);
+            this.groupBox2.Controls.Add(this.txtbDirectoryName);
+            this.groupBox2.Controls.Add(this.cmbxCapture);
+            this.groupBox2.Controls.Add(this.rbtnStereo);
+            this.groupBox2.Controls.Add(this.rbtnMono);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.comboBoxKbps);
-            this.groupBox2.Controls.Add(this.comboBoxKhz);
+            this.groupBox2.Controls.Add(this.cmbxKbps);
+            this.groupBox2.Controls.Add(this.cmbxKhz);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
@@ -848,28 +848,28 @@
             this.checkDataDir.TabIndex = 22;
             this.checkDataDir.Text = "Create data dir - YES/NO";
             this.checkDataDir.UseVisualStyleBackColor = true;
-            this.checkDataDir.CheckedChanged += new System.EventHandler(this.Check_DataDir_CheckedChanged);
+            this.checkDataDir.CheckedChanged += new System.EventHandler(this.checkDataDir_CheckedChanged);
             // 
-            // buttonSaveSettings
+            // btnSaveSettings
             // 
-            this.buttonSaveSettings.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonSaveSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSaveSettings.BackgroundImage")));
-            this.buttonSaveSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonSaveSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSaveSettings.FlatAppearance.BorderSize = 0;
-            this.buttonSaveSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonSaveSettings.ForeColor = System.Drawing.Color.Black;
-            this.buttonSaveSettings.ImageKey = "(отсутствует)";
-            this.buttonSaveSettings.Location = new System.Drawing.Point(368, 80);
-            this.buttonSaveSettings.Name = "buttonSaveSettings";
-            this.buttonSaveSettings.Size = new System.Drawing.Size(30, 30);
-            this.buttonSaveSettings.TabIndex = 1;
-            this.buttonSaveSettings.UseVisualStyleBackColor = false;
-            this.buttonSaveSettings.Click += new System.EventHandler(this.ButtonSaveSettings_Click);
+            this.btnSaveSettings.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSaveSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveSettings.BackgroundImage")));
+            this.btnSaveSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSaveSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveSettings.FlatAppearance.BorderSize = 0;
+            this.btnSaveSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSaveSettings.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveSettings.ImageKey = "(отсутствует)";
+            this.btnSaveSettings.Location = new System.Drawing.Point(368, 80);
+            this.btnSaveSettings.Name = "btnSaveSettings";
+            this.btnSaveSettings.Size = new System.Drawing.Size(30, 30);
+            this.btnSaveSettings.TabIndex = 1;
+            this.btnSaveSettings.UseVisualStyleBackColor = false;
+            this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
             // 
             // timer2
             // 
-            this.timer2.Tick += new System.EventHandler(this.Timer_Data_Tick);
+            this.timer2.Tick += new System.EventHandler(this.timerData_Tick);
             // 
             // openFileDialog
             // 
@@ -890,7 +890,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(434, 411);
             this.Controls.Add(this.listBoxInfo);
-            this.Controls.Add(this.panelSettingPlayer);
+            this.Controls.Add(this.tbcPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(450, 450);
@@ -902,15 +902,15 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.Record.ResumeLayout(false);
-            this.Record.PerformLayout();
+            this.tbpPlayer.ResumeLayout(false);
+            this.tbpPlayer.PerformLayout();
+            this.tbpRecord.ResumeLayout(false);
+            this.tbpRecord.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart_Animation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFront)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBack)).EndInit();
-            this.panelSettingPlayer.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFront)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBack)).EndInit();
+            this.tbcPanel.ResumeLayout(false);
+            this.tbpSettings.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -924,25 +924,25 @@
         private System.Windows.Forms.NotifyIcon Tree;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem delMenuItem;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tbpPlayer;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButtonStereo;
-        private System.Windows.Forms.RadioButton radioButtonMono;
+        private System.Windows.Forms.RadioButton rbtnStereo;
+        private System.Windows.Forms.RadioButton rbtnMono;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox directoryName;
-        private System.Windows.Forms.Button buttonSaveSettings;
-        private System.Windows.Forms.TabPage Record;
-        private System.Windows.Forms.Button buttonStartRec;
+        private System.Windows.Forms.TextBox txtbDirectoryName;
+        private System.Windows.Forms.Button btnSaveSettings;
+        private System.Windows.Forms.TabPage tbpRecord;
+        private System.Windows.Forms.Button btnStartRec;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button buttonStopRec;
+        private System.Windows.Forms.Button btnStopRec;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBoxFront;
-        private System.Windows.Forms.Label labelState;
+        private System.Windows.Forms.PictureBox pbxFront;
+        private System.Windows.Forms.Label lbState;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBoxBack;
-        private System.Windows.Forms.TabControl panelSettingPlayer;
+        private System.Windows.Forms.PictureBox pbxBack;
+        private System.Windows.Forms.TabControl tbcPanel;
         private System.Windows.Forms.ListView listViewInfoTrack;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -950,38 +950,38 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label labelTimeStart;
         private System.Windows.Forms.Label labelTimeStop;
-        private MetroFramework.Controls.MetroTrackBar trackBarAudio;
+        private MetroFramework.Controls.MetroTrackBar trbAudio;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Button buttonRefresh;
-        private System.Windows.Forms.Button buttonPush;
-        private System.Windows.Forms.Button buttonPause;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnPush;
+        private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button buttonStopAudio;
         private System.Windows.Forms.ImageList imageList;
-        private System.Windows.Forms.ComboBox comboBoxCapture;
-        private System.Windows.Forms.ComboBox comboBoxKbps;
-        private System.Windows.Forms.ComboBox comboBoxKhz;
-        private System.Windows.Forms.ComboBox comboBoxCheck;
+        private System.Windows.Forms.ComboBox cmbxCapture;
+        private System.Windows.Forms.ComboBox cmbxKbps;
+        private System.Windows.Forms.ComboBox cmbxKhz;
+        private System.Windows.Forms.ComboBox cmbxCheck;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_Animation;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tbpSettings;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.Button buttonRemote;
-        private System.Windows.Forms.ComboBox comboBoxSampleRate;
+        private System.Windows.Forms.Button btnRemote;
+        private System.Windows.Forms.ComboBox cmbxSampleRate;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBoxLame;
-        private System.Windows.Forms.RadioButton radioButtonMp3;
-        private System.Windows.Forms.RadioButton radioButtonWav;
+        private System.Windows.Forms.ComboBox cmbxLame;
+        private System.Windows.Forms.RadioButton rbtnMp3;
+        private System.Windows.Forms.RadioButton rbtnWav;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListBox listBoxInfo;
-        private System.Windows.Forms.TextBox textBoxFileAudio;
+        private System.Windows.Forms.TextBox txtbFileAudio;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button buttonOpen;
-        private System.Windows.Forms.Button folderDir;
+        private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.Button btnFolderDir;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButtonAac;
-        private System.Windows.Forms.RadioButton radioButtonWma;
-        private System.Windows.Forms.Button buttonOpenDir;
-        private AudioProgressBar audioPogressBar;
+        private System.Windows.Forms.RadioButton rbtnAac;
+        private System.Windows.Forms.RadioButton rbtnWma;
+        private System.Windows.Forms.Button btnOpenDir;
+        private AudioProgressBar prbAudioTrack;
         private System.Windows.Forms.CheckBox checkDataDir;
     }
 }
