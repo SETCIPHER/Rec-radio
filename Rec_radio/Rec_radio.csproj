@@ -133,6 +133,8 @@
     <Content Include="libmp3lame.64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\progres.png" />
+    <None Include="Resources\progres_s.png" />
     <None Include="Resources\updata.png" />
     <None Include="Resources\stop_list.png" />
     <None Include="Resources\save.png" />
