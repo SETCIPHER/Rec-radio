@@ -931,7 +931,7 @@
         private System.Windows.Forms.RadioButton radioButtonStereo;
         private System.Windows.Forms.RadioButton radioButtonMono;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox directoryName;
+        public System.Windows.Forms.TextBox directoryName;
         private System.Windows.Forms.Button buttonSaveSettings;
         private System.Windows.Forms.TabPage Record;
         private System.Windows.Forms.Button buttonStartRec;
@@ -943,7 +943,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBoxBack;
         private System.Windows.Forms.TabControl panelSettingPlayer;
-        private System.Windows.Forms.ListView listViewInfoTrack;
+        public System.Windows.Forms.ListView listViewInfoTrack;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -963,25 +963,25 @@
         private System.Windows.Forms.ComboBox comboBoxCheck;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_Animation;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        public System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Button buttonRemote;
-        private System.Windows.Forms.ComboBox comboBoxSampleRate;
+        public System.Windows.Forms.ComboBox comboBoxSampleRate;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBoxLame;
-        private System.Windows.Forms.RadioButton radioButtonMp3;
-        private System.Windows.Forms.RadioButton radioButtonWav;
+        public System.Windows.Forms.ComboBox comboBoxLame;
+        public System.Windows.Forms.RadioButton radioButtonMp3;
+        public System.Windows.Forms.RadioButton radioButtonWav;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ListBox listBoxInfo;
-        private System.Windows.Forms.TextBox textBoxFileAudio;
+        public System.Windows.Forms.ListBox listBoxInfo;
+        public System.Windows.Forms.TextBox textBoxFileAudio;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button buttonOpen;
         private System.Windows.Forms.Button folderDir;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButtonAac;
-        private System.Windows.Forms.RadioButton radioButtonWma;
+        public System.Windows.Forms.RadioButton radioButtonAac;
+        public System.Windows.Forms.RadioButton radioButtonWma;
         private System.Windows.Forms.Button buttonOpenDir;
-        private AudioProgressBar audioPogressBar;
+        public AudioProgressBar audioPogressBar;
         private System.Windows.Forms.CheckBox checkDataDir;
     }
 }

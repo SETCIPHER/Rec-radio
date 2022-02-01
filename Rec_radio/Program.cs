@@ -7,9 +7,8 @@ namespace Rec_radio
 {
     static class Program
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
+
+        public static Form1 OLD;
         [STAThread]
         static void Main()
         {

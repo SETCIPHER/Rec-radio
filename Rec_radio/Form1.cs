@@ -22,22 +22,9 @@ namespace Rec_radio
         
         public Form1()
         {
+            Program.OLD = this;
             InitializeComponent();
-            Sound_Frequency();
-            Save_Init();
-            Queue();
-
-            buttonStartRec.Enabled = false;
-            buttonStopRec.Enabled = false;
-            labelState.Visible = false;
-            comboBoxCheck.Enabled = false;
-            trackBarAudio.Enabled = false;
-            listViewInfoTrack.SmallImageList = imageList;
-            comboBoxSampleRate.Enabled = false;
-            comboBoxLame.Enabled = false;
-
-            // устанавливаем обработчики событий для меню
-            delMenuItem.Click += Del_Menu_Item_Click;  
+            
 
         }
         
@@ -47,8 +34,8 @@ namespace Rec_radio
         int checkedRB;
 
         MyData data = new MyData();
-       
-        
+        ConvertAudio audio = new ConvertAudio();
+
 
 
         WasapiLoopbackCapture waveIn_out;
@@ -72,16 +59,9 @@ namespace Rec_radio
             chart_Animation.ChartAreas[0].AxisY.MinorGrid.Enabled = false;
             chart_Animation.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             chart_Animation.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
-            //chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
-
             chart_Animation.ChartAreas[0].AxisX.LabelStyle.Enabled = false;
             chart_Animation.ChartAreas[0].AxisY.LabelStyle.Enabled = false;
 
-            //chart1.ChartAreas[0].AxisX.Interval = 1;
-            //chart1.ChartAreas[0].AxisY.Interval = 1;
-
-            //chart1.ChartAreas[0].AxisX.LineColor = Color.Black;
-            //chart1.ChartAreas[0].AxisY.LineColor = Color.Black;
         }
         private void WaveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
@@ -89,29 +69,25 @@ namespace Rec_radio
                 stream_out.Write(e.Buffer, 0, e.BytesRecorded);
             //stream_out.Flush();
 
-        }
-        private void WaveIn_DataAvailable_Float(object sender, WaveInEventArgs args)
-        {
-
             float max = 0;
 
-            // interpret as 16 bit audio
-            for (int index = 0; index < args.BytesRecorded; index += 2)
+            for (int index = 0; index < e.BytesRecorded; index += 2)
             {
-                short sample = (short)((args.Buffer[index + 1] << 8) | args.Buffer[index + 0]);
-                var sample32 = sample / 32768f; // to floating point
-                if (sample32 < 0) sample32 = -sample32; // absolute value 
-                if (sample32 > max) max = sample32; // is this the max value?
+                short sample = (short)((e.Buffer[index + 1] << 8) | e.Buffer[index + 0]);
+                var sample32 = sample / 32768f;
+                if (sample32 < 0) sample32 = -sample32;
+                if (sample32 > max) max = sample32;
             }
 
-            // calculate what fraction this peak is of previous peaks
             if (max > audioValueMax)
             {
                 audioValueMax = (double)max;
             }
             audioValueLast = max;
             audioCount += 1;
+
         }
+      
         private void WaveIn_Char(object sender, WaveInEventArgs e)
         {
             for (int i = 0; i < e.BytesRecorded; i += 2)
@@ -225,8 +201,6 @@ namespace Rec_radio
                 {
                     case "WASAIP":
                         waveIn_out = new WasapiLoopbackCapture();
-                        //waveOut.DeviceNumber = selectedDevice; //Дефолтное устройство для записи (если оно имеется)
-                        waveIn_out.DataAvailable += WaveIn_DataAvailable_Float;
                         waveIn_out.DataAvailable += WaveIn_Char;
                         waveIn_out.DataAvailable += new EventHandler<WaveInEventArgs>(WaveIn_DataAvailable); //Прикрепляем к событию DataAvailable обработчик, возникающий при наличии записываемых данных
                         waveIn_out.RecordingStopped += new EventHandler<StoppedEventArgs>(WaveIn_RecordingStopped); // Прикрепляем обработчик завершения записи 
@@ -236,8 +210,7 @@ namespace Rec_radio
                         break;
                     case "LINE_IN":
                         waveIn = new WaveInEvent();
-                        waveIn.DeviceNumber = selectedDevice; //Дефолтное устройство для записи (если оно имеется)
-                        waveIn.DataAvailable += WaveIn_DataAvailable_Float;
+                        waveIn.DeviceNumber = selectedDevice; //Дефолтное устройство для записи (если оно имеется) 
                         waveIn.DataAvailable += WaveIn_Char;
                         waveIn.DataAvailable += new EventHandler<WaveInEventArgs>(WaveIn_DataAvailable);  //Прикрепляем к событию DataAvailable обработчик, возникающий при наличии записываемых данных
                         waveIn.RecordingStopped += new EventHandler<StoppedEventArgs>(WaveIn_RecordingStopped);  // Прикрепляем обработчик завершения записи 
@@ -478,6 +451,7 @@ namespace Rec_radio
             comboBoxCapture.Items.AddRange(w);
 
         }
+
         void Device_In()
         {
             int waveInDevices = WaveIn.DeviceCount;
@@ -495,6 +469,7 @@ namespace Rec_radio
             comboBoxCheck.Items.Add("Device OUT WASAIP (Default playback device)");
            
         }
+
         private void ComboBoxCheck_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -512,27 +487,35 @@ namespace Rec_radio
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            Sound_Frequency();
+            Save_Init();
+            Queue();
+
+            buttonStartRec.Enabled = false;
+            buttonStopRec.Enabled = false;
+            labelState.Visible = false;
+            comboBoxCheck.Enabled = false;
+            trackBarAudio.Enabled = false;
+            listViewInfoTrack.SmallImageList = imageList;
+            comboBoxSampleRate.Enabled = false;
+            comboBoxLame.Enabled = false;
+
+            // устанавливаем обработчики событий для меню
+            delMenuItem.Click += Del_Menu_Item_Click;
             checkedRB = Properties.Settings.Default.checkedRB; //читаем
             (new RadioButton[] { radioButtonMono, radioButtonStereo })[checkedRB].Checked = true; // чекаем нужный rb
 
         }
+
         private void RadioButtonMono_CheckedChanged(object sender, EventArgs e)
-        {
-            //if ((sender as RadioButton).Checked)
-            //{
-            //    checkedRB = int.Parse((sender as RadioButton).Tag.ToString()); //предварительно в свойства Tag радиобаттонов в окне свойств записываем значения от 0 до 4
-            //}
+        {  
             if (radioButtonMono.Checked)
             {
                 checkedRB = Convert.ToInt32(radioButtonMono.Tag);
             }
         }
         private void RadioButtonStereo_CheckedChanged(object sender, EventArgs e)
-        {
-            //if ((sender as RadioButton).Checked)
-            //{
-            //    checkedRB = int.Parse((sender as RadioButton).Tag.ToString()); //предварительно в свойства Tag радиобаттонов в окне свойств записываем значения от 0 до 4
-            //}
+        {       
             if (radioButtonStereo.Checked)
             {
                 checkedRB = Convert.ToInt32(radioButtonStereo.Tag);
@@ -585,6 +568,7 @@ namespace Rec_radio
             listViewInfoTrack.EndUpdate();
 
         }
+
         private void File_Play()
         {
             //path = data.GetDirName(DirectoryName.Text);
@@ -805,118 +789,7 @@ namespace Rec_radio
         //=======================================================
         //================КОНВЕРТАЦИЯ АУДИО=====================
         //=======================================================
-        public void Convert_Audio()
-        {
-            
-            foreach (String file in openFileDialog.FileNames)
-            {
-                
-                try
-                {
-                    int sampleRate = Convert.ToInt32(comboBoxSampleRate.Text);
-                    int lamePreset = Convert.ToInt32(comboBoxLame.Text);
-                    var path_name = Path.GetFileNameWithoutExtension(file);
-                    var path_ext = Path.GetExtension(openFileDialog.FileName);
-                    var dir = Path.GetDirectoryName(file);
-                    var infile = dir + "\\" + path_name;
-                    var outfile = directoryName.Text + "\\" + textBoxFileAudio.Text + "\\";
-                    DirectoryInfo newDir = new DirectoryInfo(outfile);
-                    if (!newDir.Exists)
-                    {
-                        newDir.Create();
-                    }
-
-                    if (radioButtonWav.Checked)
-                    {
-                        ////MP3 TO WAV
-                        //string newFileMP3 = Path.Combine(outfile, path_name + ".wav");//Во Что!!!!!!!!!
-                        //using (var mp3Reader = new Mp3FileReader(infile + path_ext))//что???????????
-                        //{
-                        //    var wavFormat = new WaveFormat(sampleRate, 16, 2);
-                        //    using (var wavStream = new WaveFormatConversionStream(wavFormat, mp3Reader))
-
-                        //    {
-                        //        WaveFileWriter.CreateWaveFile(newFileMP3, wavStream);
-                        //        listBox1.ForeColor = Color.Black;
-                        //        listBox1.Items.Add("OK! conversion MP3 >>>>>> WAV - " + path_name + "   " + sampleRate + "KHz");
-                        //    }
-                        //}
-                        //OLD TO WAV
-                        string fileOLD = Path.Combine(outfile, path_name + ".wav");//Во Что!!!!!!!!!
-                        using (MediaFoundationReader Reader = new MediaFoundationReader(infile + path_ext))
-                        {
-                            var wavFormat = new WaveFormat(sampleRate, 16, 2);
-                            using (var wavStream = new WaveFormatConversionStream(wavFormat, Reader))
-
-                            {
-                                WaveFileWriter.CreateWaveFile(fileOLD, wavStream);
-                                listBoxInfo.ForeColor = Color.Black;
-                                listBoxInfo.Items.Add("OK! conversion " + path_ext  + " =>> .wav  " + path_name);
-                            }
-                        }
-
-
-                    }
-                    else if (radioButtonMp3.Checked)
-                    {
-                        //WAV TO MP3
-                        string fileMP3 = Path.Combine(outfile, path_name + ".mp3");
-                        using (var reader = new AudioFileReader(infile + path_ext))
-                        {
-
-                            using (var writer = new LameMP3FileWriter(fileMP3, reader.WaveFormat, lamePreset))
-
-                            {
-                                reader.CopyTo(writer);
-                                listBoxInfo.ForeColor = Color.Black;
-                                listBoxInfo.Items.Add("OK! conversion " + path_ext + " =>> .mp3  " + path_name);
-                            }
-                        }
-
-                    }
-                    else if (radioButtonAac.Checked)
-                    {
-                        //WAV TO AAC
-                        string fileAAC = Path.Combine(outfile, path_name + ".aac");
-
-                        using (MediaFoundationReader reader = new MediaFoundationReader(infile + path_ext))
-                        {
-                            MediaFoundationEncoder.EncodeToAac(reader, fileAAC);
-                            listBoxInfo.ForeColor = Color.Black;
-                            listBoxInfo.Items.Add("OK! conversion " + path_ext  + " =>> .aac  " + path_name);
-                        }
-
-                    }
-                    else if (radioButtonWma.Checked)
-                    {
-                        //WAV TO WMA
-                        string fileWMA = Path.Combine(outfile, path_name + ".wma");
-
-                        using (MediaFoundationReader reader = new MediaFoundationReader(infile + path_ext))
-                        {
-                            MediaFoundationEncoder.EncodeToWma(reader, fileWMA);
-                            listBoxInfo.ForeColor = Color.Black;
-                            listBoxInfo.Items.Add("OK! conversion " + path_ext + " =>> .wma  " + path_name);
-                        }
-
-                    }
-                    else
-                    {
-                        listBoxInfo.ForeColor = Color.DarkBlue;
-                        listBoxInfo.Items.Add("SELECT! Format conversion!");
-                    }
-                    //Process.Start(outfile);
-                    
-                }
-
-                catch (Exception ex)
-                {
-                    listBoxInfo.ForeColor = Color.Red;
-                    listBoxInfo.Items.Add("EROOR! Audio conversion!");
-                }
-            }
-         
-        }
+       
         // Открыть файловый менеджер для выбора аудио файла с расширением
         private void Button_Click_Remonte(object sender, EventArgs e)
         {
@@ -925,11 +798,8 @@ namespace Rec_radio
             openFileDialog.Multiselect = true;
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                Convert_Audio();
-                
+                audio.Convert_Audio();
             }
-
-
             
         }
         // Выбор расширения для конвертации
