@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Tree = new System.Windows.Forms.NotifyIcon(this.components);
             this.imageList = new System.Windows.Forms.ImageList(this.components);
@@ -68,9 +68,9 @@
             this.buttonStopRec = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxCheck = new System.Windows.Forms.ComboBox();
-            this.pictureBoxFront = new System.Windows.Forms.PictureBox();
             this.labelState = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBoxFront = new System.Windows.Forms.PictureBox();
             this.pictureBoxBack = new System.Windows.Forms.PictureBox();
             this.comboBoxCapture = new System.Windows.Forms.ComboBox();
             this.comboBoxKhz = new System.Windows.Forms.ComboBox();
@@ -424,9 +424,9 @@
             this.Record.Controls.Add(this.buttonStopRec);
             this.Record.Controls.Add(this.label4);
             this.Record.Controls.Add(this.comboBoxCheck);
-            this.Record.Controls.Add(this.pictureBoxFront);
             this.Record.Controls.Add(this.labelState);
             this.Record.Controls.Add(this.label3);
+            this.Record.Controls.Add(this.pictureBoxFront);
             this.Record.Controls.Add(this.pictureBoxBack);
             this.Record.Location = new System.Drawing.Point(4, 22);
             this.Record.Name = "Record";
@@ -456,33 +456,33 @@
             // 
             this.chart_Animation.BackColor = System.Drawing.Color.Transparent;
             this.chart_Animation.BackSecondaryColor = System.Drawing.Color.Silver;
-            chartArea2.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.None;
-            chartArea2.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.None;
-            chartArea2.AxisY2.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.Straight;
-            chartArea2.BackColor = System.Drawing.Color.White;
-            chartArea2.BorderColor = System.Drawing.Color.White;
-            chartArea2.Name = "ChartArea1";
-            this.chart_Animation.ChartAreas.Add(chartArea2);
-            legend2.Enabled = false;
-            legend2.HeaderSeparatorColor = System.Drawing.Color.Silver;
-            legend2.ItemColumnSeparatorColor = System.Drawing.Color.Gainsboro;
-            legend2.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
-            legend2.Name = "Legend1";
-            legend2.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
-            this.chart_Animation.Legends.Add(legend2);
+            chartArea1.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.None;
+            chartArea1.AlignmentStyle = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentStyles.None;
+            chartArea1.AxisY2.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.Straight;
+            chartArea1.BackColor = System.Drawing.Color.White;
+            chartArea1.BorderColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            this.chart_Animation.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.HeaderSeparatorColor = System.Drawing.Color.Silver;
+            legend1.ItemColumnSeparatorColor = System.Drawing.Color.Gainsboro;
+            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Row;
+            legend1.Name = "Legend1";
+            legend1.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
+            this.chart_Animation.Legends.Add(legend1);
             this.chart_Animation.Location = new System.Drawing.Point(3, 115);
             this.chart_Animation.Name = "chart_Animation";
             this.chart_Animation.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.chart_Animation.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.ForestGreen};
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Red;
-            series2.LabelForeColor = System.Drawing.Color.Empty;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.YValuesPerPoint = 4;
-            this.chart_Animation.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Red;
+            series1.LabelForeColor = System.Drawing.Color.Empty;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 4;
+            this.chart_Animation.Series.Add(series1);
             this.chart_Animation.Size = new System.Drawing.Size(417, 155);
             this.chart_Animation.TabIndex = 24;
             this.chart_Animation.Text = "chart1";
@@ -516,7 +516,7 @@
             // buttonStopRec
             // 
             this.buttonStopRec.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonStopRec.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonStopRec.BackgroundImage")));
+            this.buttonStopRec.BackgroundImage = global::Rec_radio.Properties.Resources.pause_play;
             this.buttonStopRec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonStopRec.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonStopRec.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -552,16 +552,6 @@
             this.comboBoxCheck.TabIndex = 13;
             this.comboBoxCheck.SelectedIndexChanged += new System.EventHandler(this.ComboBoxCheck_SelectedIndexChanged);
             // 
-            // pictureBoxFront
-            // 
-            this.pictureBoxFront.ErrorImage = null;
-            this.pictureBoxFront.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFront.Image")));
-            this.pictureBoxFront.Location = new System.Drawing.Point(91, 16);
-            this.pictureBoxFront.Name = "pictureBoxFront";
-            this.pictureBoxFront.Size = new System.Drawing.Size(324, 14);
-            this.pictureBoxFront.TabIndex = 16;
-            this.pictureBoxFront.TabStop = false;
-            // 
             // labelState
             // 
             this.labelState.AutoSize = true;
@@ -585,14 +575,25 @@
             this.label3.Text = "RECORDING";
             this.label3.Visible = false;
             // 
+            // pictureBoxFront
+            // 
+            this.pictureBoxFront.ErrorImage = null;
+            this.pictureBoxFront.Image = global::Rec_radio.Properties.Resources.progres;
+            this.pictureBoxFront.Location = new System.Drawing.Point(91, 17);
+            this.pictureBoxFront.Name = "pictureBoxFront";
+            this.pictureBoxFront.Size = new System.Drawing.Size(324, 13);
+            this.pictureBoxFront.TabIndex = 16;
+            this.pictureBoxFront.TabStop = false;
+            // 
             // pictureBoxBack
             // 
             this.pictureBoxBack.BackColor = System.Drawing.Color.LightGray;
             this.pictureBoxBack.ErrorImage = null;
-            this.pictureBoxBack.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBack.Image")));
-            this.pictureBoxBack.Location = new System.Drawing.Point(90, 15);
+            this.pictureBoxBack.Image = global::Rec_radio.Properties.Resources.progres_s;
+            this.pictureBoxBack.Location = new System.Drawing.Point(90, 16);
             this.pictureBoxBack.Name = "pictureBoxBack";
-            this.pictureBoxBack.Size = new System.Drawing.Size(325, 17);
+            this.pictureBoxBack.Size = new System.Drawing.Size(325, 15);
+            this.pictureBoxBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxBack.TabIndex = 17;
             this.pictureBoxBack.TabStop = false;
             // 
@@ -707,7 +708,7 @@
             // buttonRemote
             // 
             this.buttonRemote.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonRemote.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRemote.BackgroundImage")));
+            this.buttonRemote.BackgroundImage = global::Rec_radio.Properties.Resources.refrech;
             this.buttonRemote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonRemote.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRemote.FlatAppearance.BorderSize = 0;
@@ -853,7 +854,7 @@
             // buttonSaveSettings
             // 
             this.buttonSaveSettings.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonSaveSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSaveSettings.BackgroundImage")));
+            this.buttonSaveSettings.BackgroundImage = global::Rec_radio.Properties.Resources.save;
             this.buttonSaveSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonSaveSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSaveSettings.FlatAppearance.BorderSize = 0;
